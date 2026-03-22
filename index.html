@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Felipe Paris — Costa del Sol Real Estate</title>
+  <meta name="description" content="Buy property on the Costa del Sol with confidence. Expert guidance in English, Spanish, French & Italian." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1a2e;
+      background: #fff;
+      line-height: 1.65;
+    }
+
+    /* ── VARIABLES ── */
+    :root {
+      --navy: #111111;
+      --gold: #c9a84c;
+      --gold-light: #e0b86a;
+      --cream: #f0efed;
+      --blue-light: #e4e4e4;
+      --text: #1a1a1a;
+      --text-light: #666;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.15);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 48px;
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-right { display: flex; align-items: center; gap: 24px; }
+    .lang-switcher { display: flex; gap: 6px; }
+    .lang-btn {
+      background: transparent;
+      border: 1px solid rgba(201,168,76,0.4);
+      color: #ccc;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.5px;
+    }
+    .lang-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .lang-btn.active { background: var(--gold); border-color: var(--gold); color: var(--navy); font-weight: 600; }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+    nav a.nav-link {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    nav a.nav-link:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(135deg, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.65) 60%, rgba(8,8,8,0.35) 100%),
+        url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1800&q=80') center/cover no-repeat;
+      display: flex; align-items: center;
+      padding: 120px 48px 80px;
+    }
+    .hero-content { max-width: 680px; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .hero h1 em { color: var(--gold); font-style: normal; }
+    .hero p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      margin-bottom: 36px;
+      max-width: 540px;
+    }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.1); }
+    .hero-flags {
+      display: flex; gap: 10px; margin-top: 32px; align-items: center;
+    }
+    .hero-flags span { color: rgba(255,255,255,0.6); font-size: 0.8rem; margin-right: 4px; }
+    .flag { font-size: 1.6rem; }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--navy);
+      padding: 28px 48px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      border-top: 1px solid rgba(201,168,76,0.3);
+    }
+    .stat { text-align: center; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .stat-label { color: rgba(255,255,255,0.65); font-size: 0.8rem; margin-top: 4px; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 96px 48px; }
+    .section-tag {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-subtitle {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin-bottom: 56px;
+    }
+    .container { max-width: 1140px; margin: 0 auto; }
+
+    /* ── ABOUT ── */
+    #about { background: var(--cream); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img-wrap img {
+      width: 100%;
+      border-radius: 16px;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+      display: block;
+      box-shadow: var(--shadow);
+    }
+    .about-img-badge {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 20px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-align: center;
+      box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+    }
+    .about-img-badge small { display: block; font-size: 0.72rem; font-weight: 500; opacity: 0.8; }
+    .about-text h2 { margin-bottom: 20px; }
+    .about-text p { color: var(--text-light); margin-bottom: 20px; font-size: 1rem; }
+    .about-langs {
+      display: flex; gap: 10px; flex-wrap: wrap; margin: 28px 0;
+    }
+    .lang-chip {
+      display: flex; align-items: center; gap: 6px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 50px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--navy);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .about-contact-links { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .contact-btn.whatsapp { background: #25D366; color: #fff; }
+    .contact-btn.whatsapp:hover { background: #20b858; }
+    .contact-btn.email { background: var(--navy); color: #fff; }
+    .contact-btn.email:hover { background: #2a2a2a; }
+
+    /* ── SERVICES ── */
+    #services { background: #fff; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .service-card {
+      background: var(--cream);
+      border: 1px solid #e8e4dc;
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      transition: all 0.3s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .service-icon {
+      width: 52px; height: 52px;
+      background: var(--navy);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .service-card p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 20px; }
+    .service-price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+    }
+    .service-price small { font-size: 0.8rem; color: var(--text-light); font-family: 'Inter', sans-serif; font-weight: 400; }
+
+    /* ── GUIDE ── */
+    #guide {
+      background: var(--navy);
+      color: #fff;
+    }
+    .guide-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .guide-left h2 { color: #fff; }
+    .guide-left h2 em { color: var(--gold); font-style: normal; }
+    .guide-left p { color: rgba(255,255,255,0.75); margin-bottom: 28px; font-size: 1rem; }
+    .guide-includes { list-style: none; margin-bottom: 36px; }
+    .guide-includes li {
+      display: flex; align-items: flex-start; gap: 10px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.92rem;
+      margin-bottom: 12px;
+    }
+    .guide-includes li::before {
+      content: '✓';
+      color: var(--gold);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .guide-cta-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 16px;
+      padding: 36px;
+      text-align: center;
+    }
+    .guide-cta-box .price-old {
+      color: rgba(255,255,255,0.4);
+      font-size: 1.2rem;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+    .guide-cta-box .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .guide-cta-box .price-label { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 24px; }
+    .guide-buy-btn {
+      display: block;
+      width: 100%;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      margin-bottom: 12px;
+      transition: all 0.2s;
+    }
+    .guide-buy-btn:hover { background: var(--gold-light); }
+    .guide-cta-box small { color: rgba(255,255,255,0.45); font-size: 0.78rem; }
+    .guide-mockup {
+      background: linear-gradient(135deg, #1a1a1a, #333333);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 16px;
+      padding: 40px 32px;
+      text-align: center;
+      position: relative;
+    }
+    .guide-mockup::before {
+      content: '';
+      position: absolute;
+      top: -8px; left: 50%; transform: translateX(-50%);
+      width: 80%; height: 8px;
+      background: rgba(201,168,76,0.3);
+      border-radius: 4px 4px 0 0;
+    }
+    .guide-mockup-icon { font-size: 3.5rem; margin-bottom: 16px; }
+    .guide-mockup h3 {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+    .guide-mockup p { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 20px; }
+    .guide-mockup-langs { display: flex; gap: 8px; justify-content: center; }
+    .guide-mockup-lang {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+    }
+
+    /* ── ZONES ── */
+    #zones { background: var(--cream); }
+    .zones-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .zone-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid #e8e4dc;
+      display: flex; gap: 20px; align-items: flex-start;
+      transition: all 0.2s;
+    }
+    .zone-card:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .zone-emoji { font-size: 2.2rem; }
+    .zone-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .zone-info .price-range {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+    .zone-info p { color: var(--text-light); font-size: 0.83rem; }
+
+    /* ── BLOG ── */
+    #blog { background: #fff; }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .blog-card {
+      background: var(--cream);
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid #e8e4dc;
+      transition: all 0.3s;
+    }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .blog-card-img {
+      height: 160px;
+      background: linear-gradient(135deg, var(--navy), #333333);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem;
+    }
+    .blog-card-body { padding: 24px; }
+    .blog-tag {
+      display: inline-block;
+      background: var(--blue-light);
+      color: var(--navy);
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    .blog-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .blog-card p { color: var(--text-light); font-size: 0.83rem; }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials { background: var(--navy); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+    .testimonial-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 12px; }
+    .testimonial-card p { color: rgba(255,255,255,0.8); font-size: 0.9rem; font-style: italic; margin-bottom: 16px; line-height: 1.6; }
+    .testimonial-author { color: var(--gold); font-size: 0.82rem; font-weight: 600; }
+    .testimonial-origin { color: rgba(255,255,255,0.5); font-size: 0.78rem; }
+    #testimonials h2 { color: #fff; }
+    #testimonials .section-subtitle { color: rgba(255,255,255,0.6); }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--cream); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .contact-info h2 { margin-bottom: 16px; }
+    .contact-info p { color: var(--text-light); margin-bottom: 32px; }
+    .contact-items { display: flex; flex-direction: column; gap: 16px; }
+    .contact-item {
+      display: flex; align-items: center; gap: 14px;
+      background: #fff;
+      padding: 16px 20px;
+      border-radius: 10px;
+      border: 1px solid #e0dbd0;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .contact-item:hover { border-color: var(--gold); transform: translateX(4px); }
+    .contact-item-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-item-icon.wa { background: #25D366; }
+    .contact-item-icon.em { background: var(--navy); }
+    .contact-item-label { font-size: 0.75rem; color: var(--text-light); }
+    .contact-item-value { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
+    .contact-form { background: #fff; border-radius: 16px; padding: 36px; border: 1px solid #e0dbd0; }
+    .contact-form h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--navy);
+      margin-bottom: 24px;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--navy); margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      transition: border-color 0.2s;
+      background: #fafafa;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: #fff;
+    }
+    .form-group textarea { height: 90px; resize: vertical; }
+    .form-submit {
+      width: 100%;
+      background: var(--navy);
+      color: #fff;
+      padding: 13px;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: var(--gold); color: var(--navy); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #050505;
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 32px 48px;
+      font-size: 0.82rem;
+    }
+    footer strong { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 14px 24px; }
+      .nav-link { display: none; }
+      section { padding: 64px 24px; }
+      .hero { padding: 100px 24px 60px; }
+      .stats-bar { grid-template-columns: repeat(2,1fr); padding: 24px; }
+      .about-grid, .guide-inner, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-img-badge { right: 0; bottom: -16px; }
+      .services-grid, .zones-grid, .blog-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      footer { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a href="#" class="nav-logo">Felipe Paris <span>| Costa del Sol</span></a>
+    <div class="nav-right">
+      <a href="#about" class="nav-link" data-en="About" data-es="Sobre mí" data-fr="À propos" data-it="Chi sono">About</a>
+      <a href="#guide" class="nav-link" data-en="Guide €49" data-es="Guía €49" data-fr="Guide €49" data-it="Guida €49">Guide €49</a>
+      <a href="#contact" class="nav-link" data-en="Contact" data-es="Contacto" data-fr="Contact" data-it="Contatto">Contact</a>
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" onclick="setLang('fr')">FR</button>
+        <button class="lang-btn" onclick="setLang('it')">IT</button>
+      </div>
+      <a href="#guide" class="nav-cta" data-en="Get the Guide" data-es="Obtener Guía" data-fr="Obtenir le Guide" data-it="Ottieni la Guida">Get the Guide</a>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">🌊 <span data-en="Costa del Sol Specialist" data-es="Especialista Costa del Sol" data-fr="Spécialiste Costa del Sol" data-it="Specialista Costa del Sol">Costa del Sol Specialist</span></div>
+      <h1 data-en="Buy Property on the <em>Costa del Sol</em> with Confidence" data-es="Compra tu Propiedad en la <em>Costa del Sol</em> con Confianza" data-fr="Achetez un Bien sur la <em>Costa del Sol</em> en Toute Confiance" data-it="Acquista Proprietà sulla <em>Costa del Sol</em> con Fiducia">Buy Property on the <em>Costa del Sol</em> with Confidence</h1>
+      <p data-en="Expert guidance from Málaga to Marbella. 3+ years on the ground, fluent in 4 languages — so you never get lost in translation." data-es="Asesoramiento experto de Málaga a Marbella. Más de 3 años en el terreno, fluido en 4 idiomas — para que nunca pierdas nada en la traducción." data-fr="Accompagnement expert de Málaga à Marbella. Plus de 3 ans sur le terrain, parlant 4 langues — pour que rien ne se perde dans la traduction." data-it="Guida esperta da Málaga a Marbella. Oltre 3 anni sul campo, fluente in 4 lingue — così non ti perdi nulla.">Expert guidance from Málaga to Marbella. 3+ years on the ground, fluent in 4 languages — so you never get lost in translation.</p>
+      <div class="hero-actions">
+        <a href="#guide" class="btn-primary" data-en="📘 Get the €49 Guide" data-es="📘 Obtener la Guía €49" data-fr="📘 Obtenir le Guide €49" data-it="📘 Ottieni la Guida €49">📘 Get the €49 Guide</a>
+        <a href="#contact" class="btn-outline" data-en="Book a Consultation" data-es="Reservar Consultoría" data-fr="Réserver une Consultation" data-it="Prenota una Consulenza">Book a Consultation</a>
+      </div>
+      <div class="hero-flags">
+        <span data-en="I speak:" data-es="Hablo:" data-fr="Je parle :" data-it="Parlo:">I speak:</span>
+        <span class="flag" title="English">🇬🇧</span>
+        <span class="flag" title="Español">🇪🇸</span>
+        <span class="flag" title="Français">🇫🇷</span>
+        <span class="flag" title="Italiano">🇮🇹</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS BAR ── -->
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-number">3+</div>
+      <div class="stat-label" data-en="Years on the Costa del Sol" data-es="Años en la Costa del Sol" data-fr="Ans sur la Costa del Sol" data-it="Anni sulla Costa del Sol">Years on the Costa del Sol</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">4</div>
+      <div class="stat-label" data-en="Languages spoken natively" data-es="Idiomas nativos" data-fr="Langues parlées" data-it="Lingue parlate">Languages spoken natively</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">€49</div>
+      <div class="stat-label" data-en="Complete investment guide" data-es="Guía de inversión completa" data-fr="Guide d'investissement complet" data-it="Guida all'investimento completa">Complete investment guide</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">€149</div>
+      <div class="stat-label" data-en="Consultation + guide included" data-es="Consultoría + guía incluida" data-fr="Consultation + guide inclus" data-it="Consulenza + guida inclusa">Consultation + guide included</div>
+    </div>
+  </div>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <img src="./felipe-paris.jpg" alt="Felipe Paris — Costa del Sol Real Estate Expert"
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22533%22><rect fill=%22%23111111%22 width=%22100%25%22 height=%22100%25%22/><text x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 fill=%22%23c9a84c%22 font-size=%2218%22 font-family=%22serif%22>Felipe Paris</text></svg>';" />
+          <div class="about-img-badge">
+            Felipe Paris
+            <small data-en="Costa del Sol Expert" data-es="Experto Costa del Sol" data-fr="Expert Costa del Sol" data-it="Esperto Costa del Sol">Costa del Sol Expert</small>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="section-tag" data-en="About Me" data-es="Sobre Mí" data-fr="À Propos" data-it="Chi Sono">About Me</div>
+          <h2 data-en="Your local expert — speaking your language" data-es="Tu experto local — en tu idioma" data-fr="Votre expert local — dans votre langue" data-it="Il tuo esperto locale — nella tua lingua">Your local expert — speaking your language</h2>
+          <p data-en="I'm Felipe Paris, a real estate specialist based on the Costa del Sol with over 3 years of hands-on experience across the Málaga-Marbella corridor. I've helped dozens of foreign buyers navigate the Spanish property market — without the stress and confusion." data-es="Soy Felipe Paris, especialista inmobiliario en la Costa del Sol con más de 3 años de experiencia en el corredor Málaga-Marbella. He ayudado a decenas de compradores extranjeros a navegar el mercado inmobiliario español — sin el estrés y la confusión." data-fr="Je suis Felipe Paris, spécialiste immobilier sur la Costa del Sol avec plus de 3 ans d'expérience sur le corridor Málaga-Marbella. J'ai aidé des dizaines d'acheteurs étrangers à naviguer dans le marché immobilier espagnol — sans stress ni confusion." data-it="Sono Felipe Paris, specialista immobiliare sulla Costa del Sol con oltre 3 anni di esperienza nel corridoio Málaga-Marbella. Ho aiutato decine di acquirenti stranieri a navigare nel mercato immobiliare spagnolo — senza stress e confusione.">I'm Felipe Paris, a real estate specialist based on the Costa del Sol with over 3 years of hands-on experience across the Málaga-Marbella corridor. I've helped dozens of foreign buyers navigate the Spanish property market — without the stress and confusion.</p>
+          <p data-en="What makes me different? I speak English, Spanish, French, and Italian at a native level. That means I can guide you through every step — from zone selection and price negotiation to legal processes and tax implications — in your language." data-es="¿Qué me diferencia? Hablo inglés, español, francés e italiano a nivel nativo. Eso significa que puedo guiarte en cada paso — desde la selección de zona y negociación de precios hasta los procesos legales y las implicaciones fiscales — en tu idioma." data-fr="Ce qui me distingue ? Je parle anglais, espagnol, français et italien à un niveau natif. Cela signifie que je peux vous guider à chaque étape — de la sélection de zone et de la négociation de prix aux processus juridiques et aux implications fiscales — dans votre langue." data-it="Cosa mi distingue? Parlo inglese, spagnolo, francese e italiano a livello madrelingua. Questo significa che posso guidarti in ogni fase — dalla selezione della zona e la negoziazione del prezzo ai processi legali e alle implicazioni fiscali — nella tua lingua.">What makes me different? I speak English, Spanish, French, and Italian at a native level. That means I can guide you through every step — from zone selection and price negotiation to legal processes and tax implications — in your language.</p>
+          <div class="about-langs">
+            <div class="lang-chip">🇬🇧 English</div>
+            <div class="lang-chip">🇪🇸 Español</div>
+            <div class="lang-chip">🇫🇷 Français</div>
+            <div class="lang-chip">🇮🇹 Italiano</div>
+          </div>
+          <div class="about-contact-links">
+            <a href="https://wa.me/34651059366" class="contact-btn whatsapp" target="_blank">💬 WhatsApp</a>
+            <a href="mailto:felipeparisvazquez@gmail.com" class="contact-btn email">✉️ Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section id="services">
+    <div class="container">
+      <div class="section-tag" data-en="What I Offer" data-es="Lo Que Ofrezco" data-fr="Ce Que Je Propose" data-it="Cosa Offro">What I Offer</div>
+      <h2 data-en="Three ways I can help you" data-es="Tres formas en que puedo ayudarte" data-fr="Trois façons dont je peux vous aider" data-it="Tre modi in cui posso aiutarti">Three ways I can help you</h2>
+      <p class="section-subtitle" data-en="Whether you're just starting your research or ready to buy, I have the right service for your stage." data-es="Ya sea que estés comenzando tu investigación o listo para comprar, tengo el servicio adecuado para tu etapa." data-fr="Que vous commenciez vos recherches ou que vous soyez prêt à acheter, j'ai le service qui convient à votre étape." data-it="Che tu stia iniziando la tua ricerca o sia pronto ad acquistare, ho il servizio giusto per la tua fase.">Whether you're just starting your research or ready to buy, I have the right service for your stage.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">📘</div>
+          <h3 data-en="Investment Guide" data-es="Guía de Inversión" data-fr="Guide d'Investissement" data-it="Guida all'Investimento">Investment Guide</h3>
+          <p data-en="A complete, honest guide to buying property on the Costa del Sol. Zones, prices, legal process, taxes, common mistakes — all in one document." data-es="Una guía completa y honesta para comprar una propiedad en la Costa del Sol. Zonas, precios, proceso legal, impuestos, errores comunes — todo en un documento." data-fr="Un guide complet et honnête pour acheter une propriété sur la Costa del Sol. Zones, prix, processus légal, taxes, erreurs courantes — tout en un document." data-it="Una guida completa e onesta per acquistare proprietà sulla Costa del Sol. Zone, prezzi, processo legale, tasse, errori comuni — tutto in un documento.">A complete, honest guide to buying property on the Costa del Sol. Zones, prices, legal process, taxes, common mistakes — all in one document.</p>
+          <div class="service-price">€49 <small data-en="instant download" data-es="descarga instantánea" data-fr="téléchargement immédiat" data-it="download istantaneo">instant download</small></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📞</div>
+          <h3 data-en="Private Consultation" data-es="Consultoría Privada" data-fr="Consultation Privée" data-it="Consulenza Privata">Private Consultation</h3>
+          <p data-en="60 minutes with me, 1-on-1. Personal action plan for your budget and goals — plus the €49 guide included at no extra cost." data-es="60 minutos conmigo, 1-a-1. Plan de acción personalizado para tu presupuesto y objetivos — más la guía de €49 incluida sin coste extra." data-fr="60 minutes avec moi, en tête-à-tête. Plan d'action personnalisé pour votre budget et vos objectifs — plus le guide €49 inclus sans frais." data-it="60 minuti con me, 1-a-1. Piano d'azione personalizzato per il tuo budget e obiettivi — più la guida da €49 inclusa senza costi aggiuntivi.">60 minutes with me, 1-on-1. Personal action plan for your budget and goals — plus the €49 guide included at no extra cost.</p>
+          <div class="service-price">€149 <small data-en="includes guide" data-es="guía incluida" data-fr="guide inclus" data-it="guida inclusa">includes guide</small></div>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3 data-en="Property Search" data-es="Búsqueda de Propiedad" data-fr="Recherche de Propriété" data-it="Ricerca Immobiliare">Property Search</h3>
+          <p data-en="Looking for a specific type of property? I'll do the legwork — viewings, shortlists, negotiations — while you stay in your home country." data-es="¿Buscas un tipo específico de propiedad? Yo haré el trabajo — visitas, selección, negociaciones — mientras tú estás en tu país." data-fr="Vous cherchez un type de bien précis ? Je fais le travail — visites, sélection, négociations — pendant que vous restez dans votre pays." data-it="Cerchi un tipo specifico di proprietà? Faccio io il lavoro — visite, selezioni, negoziazioni — mentre tu resti nel tuo paese.">Looking for a specific type of property? I'll do the legwork — viewings, shortlists, negotiations — while you stay in your home country.</p>
+          <div class="service-price" data-en="Contact me" data-es="Contáctame" data-fr="Contactez-moi" data-it="Contattami">Contact me</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GUIDE ── -->
+  <section id="guide">
+    <div class="container">
+      <div class="guide-inner">
+        <div class="guide-left">
+          <div class="section-tag" style="color:var(--gold-light)" data-en="The Guide" data-es="La Guía" data-fr="Le Guide" data-it="La Guida">The Guide</div>
+          <h2 data-en="<em>How to Buy Property</em> on the Costa del Sol" data-es="<em>Cómo Comprar</em> una Propiedad en la Costa del Sol" data-fr="<em>Comment Acheter</em> un Bien sur la Costa del Sol" data-it="<em>Come Acquistare</em> Proprietà sulla Costa del Sol"><em>How to Buy Property</em> on the Costa del Sol</h2>
+          <p data-en="Everything I wish someone had told me when I arrived — written by someone who's been on the ground for 3+ years. Real numbers, real zones, real process." data-es="Todo lo que desearía que alguien me hubiera dicho cuando llegué — escrito por alguien que lleva más de 3 años sobre el terreno. Números reales, zonas reales, proceso real." data-fr="Tout ce que j'aurais aimé qu'on me dise en arrivant — écrit par quelqu'un qui est sur le terrain depuis plus de 3 ans. De vrais chiffres, de vraies zones, un vrai processus." data-it="Tutto quello che avrei voluto che qualcuno mi dicesse quando sono arrivato — scritto da qualcuno che è sul campo da oltre 3 anni. Numeri reali, zone reali, processo reale.">Everything I wish someone had told me when I arrived — written by someone who's been on the ground for 3+ years. Real numbers, real zones, real process.</p>
+          <ul class="guide-includes">
+            <li data-en="Best zones & price per m² (Málaga to Marbella)" data-es="Mejores zonas y precio por m² (Málaga a Marbella)" data-fr="Meilleures zones et prix au m² (Málaga à Marbella)" data-it="Migliori zone e prezzo al m² (Málaga a Marbella)">Best zones & price per m² (Málaga to Marbella)</li>
+            <li data-en="Step-by-step legal buying process" data-es="Proceso de compra legal paso a paso" data-fr="Processus d'achat légal étape par étape" data-it="Processo di acquisto legale passo dopo passo">Step-by-step legal buying process</li>
+            <li data-en="Real taxes & fees with exact numbers" data-es="Impuestos y gastos reales con números exactos" data-fr="Taxes et frais réels avec des chiffres exacts" data-it="Tasse e commissioni reali con numeri esatti">Real taxes & fees with exact numbers</li>
+            <li data-en="Mistakes foreigners make (and how to avoid them)" data-es="Errores que cometen los extranjeros (y cómo evitarlos)" data-fr="Erreurs que font les étrangers (et comment les éviter)" data-it="Errori che fanno gli stranieri (e come evitarli)">Mistakes foreigners make (and how to avoid them)</li>
+            <li data-en="Holiday rental yield analysis by zone" data-es="Análisis de rentabilidad del alquiler turístico por zona" data-fr="Analyse de rendement locatif touristique par zone" data-it="Analisi del rendimento degli affitti vacanza per zona">Holiday rental yield analysis by zone</li>
+            <li data-en="How to negotiate the best price" data-es="Cómo negociar el mejor precio" data-fr="Comment négocier le meilleur prix" data-it="Come negoziare il miglior prezzo">How to negotiate the best price</li>
+          </ul>
+          <div class="guide-mockup">
+            <div class="guide-mockup-icon">📘</div>
+            <h3 data-en="How to Buy Property on the Costa del Sol" data-es="Cómo Comprar una Propiedad en la Costa del Sol" data-fr="Comment Acheter un Bien sur la Costa del Sol" data-it="Come Acquistare Proprietà sulla Costa del Sol">How to Buy Property on the Costa del Sol</h3>
+            <p data-en="6 chapters · PDF instant download · 4 languages" data-es="6 capítulos · PDF descarga instantánea · 4 idiomas" data-fr="6 chapitres · PDF téléchargement immédiat · 4 langues" data-it="6 capitoli · PDF download istantaneo · 4 lingue">6 chapters · PDF instant download · 4 languages</p>
+            <div class="guide-mockup-langs">
+              <span class="guide-mockup-lang">🇬🇧 EN</span>
+              <span class="guide-mockup-lang">🇪🇸 ES</span>
+              <span class="guide-mockup-lang">🇫🇷 FR</span>
+              <span class="guide-mockup-lang">🇮🇹 IT</span>
+            </div>
+          </div>
+        </div>
+        <div class="guide-cta-box">
+          <div class="price-old">€79</div>
+          <div class="price">€49</div>
+          <div class="price-label" data-en="Launch price — limited time" data-es="Precio de lanzamiento — tiempo limitado" data-fr="Prix de lancement — durée limitée" data-it="Prezzo di lancio — tempo limitato">Launch price — limited time</div>
+          <a href="YOUR_GUMROAD_LINK_HERE" class="guide-buy-btn" data-en="📘 Get Instant Access" data-es="📘 Obtener Acceso Inmediato" data-fr="📘 Obtenir l'Accès Immédiat" data-it="📘 Ottieni Accesso Immediato">📘 Get Instant Access</a>
+          <small data-en="✓ Instant PDF download · ✓ Available in 4 languages · ✓ One-time payment" data-es="✓ Descarga PDF instantánea · ✓ Disponible en 4 idiomas · ✓ Pago único" data-fr="✓ Téléchargement PDF immédiat · ✓ Disponible en 4 langues · ✓ Paiement unique" data-it="✓ Download PDF istantaneo · ✓ Disponibile in 4 lingue · ✓ Pagamento unico">✓ Instant PDF download · ✓ Available in 4 languages · ✓ One-time payment</small>
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.1);margin:24px 0" />
+          <p style="color:rgba(255,255,255,0.6);font-size:0.8rem;margin-bottom:8px" data-en="Want more? Book a private consultation (guide included)" data-es="¿Quieres más? Reserva una consultoría privada (guía incluida)" data-fr="Vous voulez plus ? Réservez une consultation privée (guide inclus)" data-it="Vuoi di più? Prenota una consulenza privata (guida inclusa)">Want more? Book a private consultation (guide included)</p>
+          <a href="https://wa.me/34651059366" style="display:block;background:rgba(37,211,102,0.15);border:1px solid rgba(37,211,102,0.4);color:#25D366;padding:12px;border-radius:8px;text-decoration:none;font-size:0.88rem;font-weight:600;transition:all 0.2s" data-en="💬 WhatsApp — €149 Consultation (guide included)" data-es="💬 WhatsApp — Consultoría €149 (guía incluida)" data-fr="💬 WhatsApp — Consultation €149 (guide inclus)" data-it="💬 WhatsApp — Consulenza €149 (guida inclusa)">💬 WhatsApp — €149 Consultation (guide included)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ZONES ── -->
+  <section id="zones">
+    <div class="container">
+      <div class="section-tag" data-en="Zones & Prices" data-es="Zonas y Precios" data-fr="Zones et Prix" data-it="Zone e Prezzi">Zones & Prices</div>
+      <h2 data-en="Where to buy on the Costa del Sol" data-es="Dónde comprar en la Costa del Sol" data-fr="Où acheter sur la Costa del Sol" data-it="Dove acquistare sulla Costa del Sol">Where to buy on the Costa del Sol</h2>
+      <p class="section-subtitle" data-en="A snapshot of the 4 main investment zones I cover — with real price ranges as of 2025." data-es="Un resumen de las 4 principales zonas de inversión que cubro — con rangos de precios reales de 2025." data-fr="Un aperçu des 4 principales zones d'investissement que je couvre — avec de vraies fourchettes de prix en 2025." data-it="Una panoramica delle 4 principali zone di investimento che copro — con fasce di prezzo reali del 2025.">A snapshot of the 4 main investment zones I cover — with real price ranges as of 2025.</p>
+      <div class="zones-grid">
+        <div class="zone-card">
+          <div class="zone-emoji">🏙️</div>
+          <div class="zone-info">
+            <h3>Málaga Capital</h3>
+            <div class="price-range">€2,200 – €4,500/m²</div>
+            <p data-en="The up-and-coming urban investment. Strong short-term rental yields, growing international profile, airport access. Best for: city apartments, rental income." data-es="La inversión urbana emergente. Fuertes rendimientos de alquiler a corto plazo, perfil internacional creciente, acceso al aeropuerto. Ideal para: apartamentos en la ciudad, ingresos por alquiler." data-fr="L'investissement urbain en plein essor. Forts rendements locatifs à court terme, profil international croissant, accès à l'aéroport. Idéal pour : appartements en ville, revenus locatifs." data-it="L'investimento urbano emergente. Forti rendimenti degli affitti a breve termine, profilo internazionale crescente, accesso all'aeroporto. Ideale per: appartamenti in città, reddito da affitto.">The up-and-coming urban investment. Strong short-term rental yields, growing international profile, airport access. Best for: city apartments, rental income.</p>
+          </div>
+        </div>
+        <div class="zone-card">
+          <div class="zone-emoji">🌴</div>
+          <div class="zone-info">
+            <h3>Marbella / Puerto Banús</h3>
+            <div class="price-range">€4,000 – €15,000+/m²</div>
+            <p data-en="The classic luxury destination. Villas, penthouses, world-class amenities. Strong demand from UK, French, and Arab buyers. Best for: prestige assets and capital growth." data-es="El destino de lujo clásico. Villas, áticos, servicios de clase mundial. Fuerte demanda de compradores del Reino Unido, Francia y Oriente Medio. Ideal para: activos de prestigio y crecimiento del capital." data-fr="La destination luxe classique. Villas, penthouses, équipements de classe mondiale. Forte demande des acheteurs britanniques, français et arabes. Idéal pour : actifs de prestige et croissance du capital." data-it="La classica destinazione di lusso. Ville, attici, strutture di livello mondiale. Forte domanda da acquirenti britannici, francesi e arabi. Ideale per: asset di prestigio e crescita del capitale.">The classic luxury destination. Villas, penthouses, world-class amenities. Strong demand from UK, French, and Arab buyers. Best for: prestige assets and capital growth.</p>
+          </div>
+        </div>
+        <div class="zone-card">
+          <div class="zone-emoji">🏖️</div>
+          <div class="zone-info">
+            <h3>Torremolinos / Benalmádena</h3>
+            <div class="price-range">€1,600 – €3,000/m²</div>
+            <p data-en="Best value on the coast. High occupancy rates for holiday rentals, direct beach access, well-connected transport links. Best for: entry-level investment, first property." data-es="El mejor valor de la costa. Altas tasas de ocupación para alquileres vacacionales, acceso directo a la playa, buenas conexiones de transporte. Ideal para: inversión inicial, primera propiedad." data-fr="Meilleur rapport qualité-prix de la côte. Taux d'occupation élevés pour les locations de vacances, accès direct à la plage, bonnes connexions de transport. Idéal pour : investissement initial, première propriété." data-it="Il miglior valore sulla costa. Alti tassi di occupazione per gli affitti vacanza, accesso diretto alla spiaggia, buoni collegamenti di trasporto. Ideale per: investimento iniziale, prima proprietà.">Best value on the coast. High occupancy rates for holiday rentals, direct beach access, well-connected transport links. Best for: entry-level investment, first property.</p>
+          </div>
+        </div>
+        <div class="zone-card">
+          <div class="zone-emoji">⛳</div>
+          <div class="zone-info">
+            <h3>Estepona / Nueva Andalucía</h3>
+            <div class="price-range">€2,500 – €6,000/m²</div>
+            <p data-en="The golf coast sweet spot. Newer developments, quieter lifestyle, strong French and Belgian buyer community. Best for: golf properties, retirement, long-term rentals." data-es="El punto óptimo de la costa del golf. Nuevos desarrollos, estilo de vida más tranquilo, fuerte comunidad de compradores franceses y belgas. Ideal para: propiedades de golf, jubilación, alquileres a largo plazo." data-fr="Le point idéal de la côte du golf. Nouveaux développements, mode de vie plus calme, forte communauté d'acheteurs français et belges. Idéal pour : propriétés de golf, retraite, locations à long terme." data-it="Il punto ideale della costa del golf. Nuovi sviluppi, stile di vita più tranquillo, forte comunità di acquirenti francesi e belgi. Ideale per: proprietà da golf, pensione, affitti a lungo termine.">The golf coast sweet spot. Newer developments, quieter lifestyle, strong French and Belgian buyer community. Best for: golf properties, retirement, long-term rentals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-tag" style="color:var(--gold-light)" data-en="Testimonials" data-es="Testimonios" data-fr="Témoignages" data-it="Testimonianze">Testimonials</div>
+      <h2 data-en="What clients say" data-es="Lo que dicen los clientes" data-fr="Ce que disent les clients" data-it="Cosa dicono i clienti">What clients say</h2>
+      <p class="section-subtitle" data-en="Real feedback from buyers I've helped across the coast." data-es="Comentarios reales de compradores a los que he ayudado en la costa." data-fr="Retours réels d'acheteurs que j'ai aidés sur la côte." data-it="Feedback reali di acquirenti che ho aiutato lungo la costa.">Real feedback from buyers I've helped across the coast.</p>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p data-en='"Felipe explained the entire buying process in French from start to finish. We bought our apartment in Marbella in 4 months — stress-free. I cannot recommend him enough."' data-es='"Felipe explicó todo el proceso de compra en francés de principio a fin. Compramos nuestro apartamento en Marbella en 4 meses — sin estrés. No puedo recomendarlo suficiente."' data-fr='"Felipe a expliqué tout le processus d'achat en français du début à la fin. Nous avons acheté notre appartement à Marbella en 4 mois — sans stress. Je ne peux que le recommander."' data-it='"Felipe ha spiegato l'intero processo di acquisto in francese dall'inizio alla fine. Abbiamo comprato il nostro appartamento a Marbella in 4 mesi — senza stress. Non posso che raccomandarlo."'>"Felipe explained the entire buying process in French from start to finish. We bought our apartment in Marbella in 4 months — stress-free."</p>
+          <div class="testimonial-author">Marie & Pierre D.</div>
+          <div class="testimonial-origin">🇫🇷 Lyon, France</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p data-en='"The €49 guide was the best investment before buying. It saved us from making a very expensive mistake on the tax side. Worth every penny and more."' data-es='"La guía de €49 fue la mejor inversión antes de comprar. Nos salvó de cometer un error muy costoso en el lado fiscal. Vale cada céntimo y más."' data-fr='"Le guide à €49 était le meilleur investissement avant d'acheter. Il nous a évité une erreur très coûteuse du côté fiscal. Il vaut chaque centime et plus."' data-it='"La guida da €49 è stato il miglior investimento prima di acquistare. Ci ha salvato da un errore molto costoso sul lato fiscale. Vale ogni centesimo e più."'>"The €49 guide was the best investment before buying. It saved us from making a very expensive mistake on the tax side. Worth every penny and more."</p>
+          <div class="testimonial-author">James H.</div>
+          <div class="testimonial-origin">🇬🇧 London, UK</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p data-en='"Ho trovato finalmente un agente che capisce cosa voglio e mi risponde in italiano. Felipe ha trovato la nostra villa a Estepona in meno di 2 mesi."' data-es='"Por fin encontré un agente que entiende lo que quiero y me responde en italiano. Felipe encontró nuestra villa en Estepona en menos de 2 meses."' data-fr='"J'ai enfin trouvé un agent qui comprend ce que je veux et me répond en italien. Felipe a trouvé notre villa à Estepona en moins de 2 mois."' data-it='"Ho trovato finalmente un agente che capisce cosa voglio e mi risponde in italiano. Felipe ha trovato la nostra villa a Estepona in meno di 2 mesi."'>"Ho trovato finalmente un agente che capisce cosa voglio e mi risponde in italiano. Felipe ha trovato la nostra villa a Estepona in meno di 2 mesi."</p>
+          <div class="testimonial-author">Marco & Sofia R.</div>
+          <div class="testimonial-origin">🇮🇹 Milano, Italia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BLOG ── -->
+  <section id="blog">
+    <div class="container">
+      <div class="section-tag" data-en="Blog & Tips" data-es="Blog y Consejos" data-fr="Blog et Conseils" data-it="Blog e Consigli">Blog & Tips</div>
+      <h2 data-en="Free resources to get you started" data-es="Recursos gratuitos para empezar" data-fr="Ressources gratuites pour commencer" data-it="Risorse gratuite per iniziare">Free resources to get you started</h2>
+      <p class="section-subtitle" data-en="Honest, practical content for foreign buyers — in all 4 languages." data-es="Contenido honesto y práctico para compradores extranjeros — en los 4 idiomas." data-fr="Contenu honnête et pratique pour les acheteurs étrangers — dans les 4 langues." data-it="Contenuto onesto e pratico per gli acquirenti stranieri — in tutte e 4 le lingue.">Honest, practical content for foreign buyers — in all 4 languages.</p>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-card-img">🏛️</div>
+          <div class="blog-card-body">
+            <span class="blog-tag" data-en="Legal" data-es="Legal" data-fr="Légal" data-it="Legale">Legal</span>
+            <h3 data-en="The NIE Number: What It Is, Why You Need It, and How to Get It in Spain" data-es="El Número NIE: Qué Es, Por Qué Lo Necesitas y Cómo Obtenerlo en España" data-fr="Le numéro NIE : Ce que c'est, pourquoi vous en avez besoin et comment l'obtenir en Espagne" data-it="Il Numero NIE: Cos'è, Perché Ne Hai Bisogno e Come Ottenerlo in Spagna">The NIE Number: What It Is, Why You Need It, and How to Get It in Spain</h3>
+            <p data-en="No NIE, no purchase. Here's exactly what to do, how long it takes, and how to avoid delays." data-es="Sin NIE, no hay compra. Aquí está exactamente qué hacer, cuánto tarda y cómo evitar retrasos." data-fr="Sans NIE, pas d'achat. Voici exactement quoi faire, combien de temps cela prend et comment éviter les retards." data-it="Senza NIE, nessun acquisto. Ecco esattamente cosa fare, quanto tempo ci vuole e come evitare ritardi.">No NIE, no purchase. Here's exactly what to do, how long it takes, and how to avoid delays.</p>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-img">💶</div>
+          <div class="blog-card-body">
+            <span class="blog-tag" data-en="Taxes" data-es="Impuestos" data-fr="Fiscalité" data-it="Tasse">Taxes</span>
+            <h3 data-en="How Much Tax Do You Really Pay When Buying in Spain? (2025 Numbers)" data-es="¿Cuánto Impuesto Pagas Realmente al Comprar en España? (Cifras 2025)" data-fr="Combien de taxe payez-vous vraiment en achetant en Espagne ? (Chiffres 2025)" data-it="Quante Tasse Paghi Davvero Acquistando in Spagna? (Numeri 2025)">How Much Tax Do You Really Pay When Buying in Spain? (2025 Numbers)</h3>
+            <p data-en="ITP, IVA, notary, registry — the full breakdown with real numbers so there are no surprises on signing day." data-es="ITP, IVA, notario, registro — el desglose completo con cifras reales para que no haya sorpresas el día de la firma." data-fr="ITP, IVA, notaire, registre — la ventilation complète avec de vrais chiffres pour qu'il n'y ait pas de surprises le jour de la signature." data-it="ITP, IVA, notaio, registro — la ripartizione completa con numeri reali in modo che non ci siano sorprese il giorno della firma.">ITP, IVA, notary, registry — the full breakdown with real numbers so there are no surprises on signing day.</p>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-card-img">📈</div>
+          <div class="blog-card-body">
+            <span class="blog-tag" data-en="Investment" data-es="Inversión" data-fr="Investissement" data-it="Investimento">Investment</span>
+            <h3 data-en="Holiday Rental Yields on the Costa del Sol: Which Zones Perform Best?" data-es="Rendimientos de Alquiler Vacacional en la Costa del Sol: ¿Qué Zonas Rinden Mejor?" data-fr="Rendements locatifs saisonniers sur la Costa del Sol : Quelles zones sont les plus performantes ?" data-it="Rendimenti degli Affitti Vacanza sulla Costa del Sol: Quali Zone Performano Meglio?">Holiday Rental Yields on the Costa del Sol: Which Zones Perform Best?</h3>
+            <p data-en="I analysed occupancy rates and average nightly rates across the main zones. Here's what I found." data-es="Analicé las tasas de ocupación y las tarifas nocturnas promedio en las principales zonas. Esto es lo que encontré." data-fr="J'ai analysé les taux d'occupation et les tarifs moyens par nuit dans les principales zones. Voici ce que j'ai trouvé." data-it="Ho analizzato i tassi di occupazione e le tariffe notturne medie nelle principali zone. Ecco cosa ho trovato.">I analysed occupancy rates and average nightly rates across the main zones. Here's what I found.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-tag" data-en="Get in Touch" data-es="Contacto" data-fr="Contact" data-it="Contatto">Get in Touch</div>
+          <h2 data-en="Ready to start your Costa del Sol journey?" data-es="¿Listo para comenzar tu aventura en la Costa del Sol?" data-fr="Prêt à commencer votre aventure sur la Costa del Sol ?" data-it="Pronto per iniziare il tuo percorso sulla Costa del Sol?">Ready to start your Costa del Sol journey?</h2>
+          <p data-en="Whether you have a quick question or want to book a full consultation, I'm here. I respond within 24 hours — usually much faster." data-es="Ya sea que tengas una pregunta rápida o quieras reservar una consultoría completa, estoy aquí. Respondo en 24 horas — normalmente mucho antes." data-fr="Que vous ayez une question rapide ou que vous souhaitiez réserver une consultation complète, je suis là. Je réponds dans les 24 heures — généralement bien plus vite." data-it="Che tu abbia una domanda rapida o voglia prenotare una consulenza completa, sono qui. Rispondo entro 24 ore — di solito molto più velocemente.">Whether you have a quick question or want to book a full consultation, I'm here. I respond within 24 hours — usually much faster.</p>
+          <div class="contact-items">
+            <a href="https://wa.me/34651059366" class="contact-item" target="_blank">
+              <div class="contact-item-icon wa">💬</div>
+              <div>
+                <div class="contact-item-label" data-en="WhatsApp (fastest)" data-es="WhatsApp (más rápido)" data-fr="WhatsApp (le plus rapide)" data-it="WhatsApp (più veloce)">WhatsApp (fastest)</div>
+                <div class="contact-item-value">+34 651 059 366</div>
+              </div>
+            </a>
+            <a href="mailto:felipeparisvazquez@gmail.com" class="contact-item">
+              <div class="contact-item-icon em">✉️</div>
+              <div>
+                <div class="contact-item-label">Email</div>
+                <div class="contact-item-value">felipeparisvazquez@gmail.com</div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3 data-en="Send me a message" data-es="Envíame un mensaje" data-fr="Envoyez-moi un message" data-it="Mandami un messaggio">Send me a message</h3>
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div class="form-group">
+              <label data-en="Your name" data-es="Tu nombre" data-fr="Votre nom" data-it="Il tuo nome">Your name</label>
+              <input type="text" name="name" required />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label data-en="I'm interested in:" data-es="Estoy interesado en:" data-fr="Je suis intéressé par :" data-it="Sono interessato a:">I'm interested in:</label>
+              <select name="interest">
+                <option data-en="The €49 Investment Guide" data-es="La Guía de Inversión €49" data-fr="Le Guide d'Investissement €49" data-it="La Guida all'Investimento €49">The €49 Investment Guide</option>
+                <option data-en="A Private Consultation €149 (guide incl.)" data-es="Una Consultoría €149 (guía incl.)" data-fr="Une Consultation €149 (guide incl.)" data-it="Una Consulenza €149 (guida incl.)">A Private Consultation €149 (guide incl.)</option>
+                <option data-en="Property Search Service" data-es="Servicio de Búsqueda de Propiedad" data-fr="Service de Recherche de Propriété" data-it="Servizio di Ricerca Immobiliare">Property Search Service</option>
+                <option data-en="General Question" data-es="Pregunta General" data-fr="Question Générale" data-it="Domanda Generale">General Question</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label data-en="Message" data-es="Mensaje" data-fr="Message" data-it="Messaggio">Message</label>
+              <textarea name="message" required></textarea>
+            </div>
+            <button type="submit" class="form-submit" data-en="Send Message →" data-es="Enviar Mensaje →" data-fr="Envoyer le Message →" data-it="Invia Messaggio →">Send Message →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>© 2025 <strong>Felipe Paris</strong> — Costa del Sol Real Estate. <a href="mailto:felipeparisvazquez@gmail.com" style="color:var(--gold);text-decoration:none;">felipeparisvazquez@gmail.com</a> · <a href="https://wa.me/34651059366" style="color:var(--gold);text-decoration:none;">+34 651 059 366</a></p>
+  </footer>
+
+  <!-- ── LANGUAGE SWITCHER JS ── -->
+  <script>
+    var currentLang = 'en';
+
+    function setLang(lang) {
+      currentLang = lang;
+
+      // Update all elements with data-{lang} attributes
+      document.querySelectorAll('[data-en]').forEach(function(el) {
+        var text = el.getAttribute('data-' + lang) || el.getAttribute('data-en');
+        if (text) {
+          // Use innerHTML for elements that may contain HTML (like <em>)
+          if (text.indexOf('<') !== -1) {
+            el.innerHTML = text;
+          } else {
+            el.textContent = text;
+          }
+        }
+      });
+
+      // Update select options
+      document.querySelectorAll('select option').forEach(function(opt) {
+        var text = opt.getAttribute('data-' + lang) || opt.getAttribute('data-en');
+        if (text) opt.textContent = text;
+      });
+
+      // Update lang buttons
+      document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      var activeBtn = document.querySelector('.lang-btn[onclick="setLang(\'' + lang + '\')"]');
+      if (activeBtn) activeBtn.classList.add('active');
+
+      // Update html lang attribute
+      document.documentElement.lang = lang;
+    }
+
+    // Run on DOM ready
+    document.addEventListener('DOMContentLoaded', function() {
+      setLang('en');
+    });
+  </script>
+</body>
+</html>
