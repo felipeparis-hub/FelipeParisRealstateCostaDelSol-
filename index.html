@@ -588,6 +588,49 @@
       .services-grid, .zones-grid, .blog-grid, .testimonials-grid { grid-template-columns: 1fr; }
       footer { padding: 24px; }
     }
+
+    /* ── MOBILE NAV ── */
+    @media (max-width: 600px) {
+      nav {
+        padding: 12px 16px;
+        flex-wrap: nowrap;
+        gap: 8px;
+      }
+      .nav-logo {
+        font-size: 0.88rem;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .nav-logo span {
+        display: none;
+      }
+      .nav-right {
+        gap: 8px;
+        flex-shrink: 0;
+      }
+      .nav-cta {
+        display: none;
+      }
+      .lang-btn {
+        padding: 4px 7px;
+        font-size: 0.7rem;
+      }
+      .lang-switcher {
+        gap: 4px;
+      }
+      .hero { padding: 90px 20px 50px; }
+      .hero-actions { flex-direction: column; gap: 12px; }
+      .hero-actions a { text-align: center; }
+      .stats-bar { grid-template-columns: repeat(2,1fr); gap: 16px; padding: 20px 16px; }
+      .stat-number { font-size: 1.5rem; }
+      section { padding: 56px 20px; }
+      .guide-cta-box { padding: 24px 20px; }
+      .guide-cta-box .price { font-size: 2.8rem; }
+      .contact-form { padding: 24px 20px; }
+      .about-img-wrap { max-width: 320px; margin: 0 auto; }
+      .zone-card { flex-direction: column; gap: 12px; }
+      footer { padding: 20px 16px; font-size: 0.75rem; }
+    }
   </style>
 </head>
 <body>
