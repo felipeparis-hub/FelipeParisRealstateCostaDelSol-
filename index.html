@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Felipe Paris — Costa del Sol Real Estate Expert</title>
 <meta name="description" content="Buy property on the Costa del Sol with confidence. Expert guidance from Málaga to Marbella. 3+ years on the ground, fluent in 4 languages.">
+<!-- ── GOOGLE ANALYTICS ── -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E745PWBHN6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E745PWBHN6');
+</script>
+<!-- ─────────────────────── -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -22,7 +31,6 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--text); overflow-x: hidden; font-weight: 300; }
-
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
@@ -49,7 +57,6 @@ nav {
 .mobile-menu a { color: var(--gray); text-decoration: none; font-size: 0.88rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.3s; }
 .mobile-menu a:hover { color: var(--gold); }
 .mobile-lang { display: flex; gap: 8px; padding: 14px 0; }
-
 /* HERO */
 .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 57px; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,169,110,0.06) 0%, transparent 70%); pointer-events: none; }
@@ -66,24 +73,21 @@ nav {
 .hero-image { position: relative; overflow: hidden; }
 .hero-image::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--navy) 0%, transparent 30%); z-index: 1; }
 .hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(20%); }
-.hero-stats { position: absolute; bottom: 50px; left: -40px; z-index: 3; display: flex; gap: 1px; }
+.hero-stats { position: absolute; bottom: 50px; left: 0; z-index: 3; display: flex; gap: 1px; }
 .stat { background: rgba(13,27,42,0.92); backdrop-filter: blur(10px); border: 1px solid rgba(201,169,110,0.2); padding: 18px 24px; text-align: center; }
 .stat-number { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--gold); display: block; line-height: 1; }
 .stat-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); display: block; margin-top: 4px; }
-
 /* BUTTONS */
 .btn-primary { background: var(--gold); color: var(--navy); padding: 13px 28px; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; font-weight: 500; transition: all 0.3s; border: none; cursor: pointer; display: inline-block; text-align: center; }
 .btn-primary:hover { background: var(--gold-light); }
 .btn-secondary { background: transparent; color: var(--text); padding: 13px 28px; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s; display: inline-block; text-align: center; }
 .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 .divider { height: 1px; background: linear-gradient(to right, transparent, rgba(201,169,110,0.3), transparent); margin: 0 5%; }
-
 /* SECTIONS */
 section { padding: 90px 8%; }
 .section-eyebrow { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
 .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 1.5rem; }
 .section-title em { font-style: italic; color: var(--gold); }
-
 /* ABOUT */
 .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 70px; align-items: center; margin-top: 50px; }
 .about-text p { color: var(--gray); line-height: 1.8; margin-bottom: 1.4rem; font-size: 0.92rem; }
@@ -95,7 +99,6 @@ section { padding: 90px 8%; }
 .about-image-wrap { position: relative; }
 .about-image-wrap::before { content: ''; position: absolute; top: -16px; right: -16px; bottom: 16px; left: 16px; border: 1px solid rgba(201,169,110,0.2); border-radius: 2px; z-index: 0; }
 .about-img { width: 100%; height: 460px; object-fit: cover; border-radius: 2px; position: relative; z-index: 1; filter: grayscale(15%); }
-
 /* SERVICES */
 #services { background: var(--navy-mid); }
 .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 50px; }
@@ -112,7 +115,6 @@ section { padding: 90px 8%; }
 .service-features { list-style: none; margin-bottom: 2.5rem; }
 .service-features li { padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.83rem; color: var(--gray); display: flex; align-items: center; gap: 0.8rem; }
 .service-features li::before { content: '—'; color: var(--gold); font-size: 0.7rem; }
-
 /* GUIDE */
 .guide-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 70px; align-items: center; margin-top: 50px; }
 .guide-cover { background: var(--navy-light); border: 1px solid rgba(201,169,110,0.2); border-radius: 4px; padding: 44px 38px; position: relative; overflow: hidden; }
@@ -131,7 +133,6 @@ section { padding: 90px 8%; }
 .guide-guarantees { list-style: none; margin-bottom: 2rem; }
 .guide-guarantees li { font-size: 0.82rem; color: var(--gray); padding: 5px 0; display: flex; align-items: center; gap: 0.7rem; }
 .guide-guarantees li::before { content: '✓'; color: var(--gold); }
-
 /* ZONES */
 #zones { background: var(--navy-mid); }
 .zones-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 50px; }
@@ -145,7 +146,6 @@ section { padding: 90px 8%; }
 .zone-desc { font-size: 0.8rem; color: var(--gray); line-height: 1.6; margin-bottom: 0.9rem; }
 .zone-best { font-size: 0.7rem; color: var(--text-dim); padding-top: 0.9rem; border-top: 1px solid rgba(255,255,255,0.06); }
 .zone-best strong { color: #E8D5B0; }
-
 /* TESTIMONIALS */
 .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 50px; }
 .testimonial { background: var(--navy-light); padding: 36px; position: relative; }
@@ -154,7 +154,6 @@ section { padding: 90px 8%; }
 .testimonial-stars { color: var(--gold); font-size: 0.78rem; margin-bottom: 0.8rem; }
 .testimonial-author strong { display: block; font-size: 0.83rem; color: var(--white); font-weight: 400; margin-bottom: 0.2rem; }
 .testimonial-author span { font-size: 0.73rem; color: var(--text-dim); }
-
 /* BLOG */
 #blog { background: var(--navy-mid); }
 .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 50px; }
@@ -164,7 +163,6 @@ section { padding: 90px 8%; }
 .blog-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 0.9rem; }
 .blog-card p { font-size: 0.8rem; color: var(--gray); line-height: 1.65; margin-bottom: 1.8rem; }
 .blog-read-more { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
-
 /* CONTACT */
 .contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 70px; margin-top: 50px; align-items: start; }
 .contact-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--white); margin-bottom: 1rem; }
@@ -188,7 +186,6 @@ section { padding: 90px 8%; }
 .form-submit:hover { background: var(--gold-light); }
 .form-note { font-size: 0.7rem; color: var(--text-dim); margin-top: 1rem; text-align: center; }
 .form-success { display: none; text-align: center; padding: 40px; color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; }
-
 /* FOOTER */
 footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(201,169,110,0.1); flex-wrap: wrap; gap: 1rem; }
 .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--gold); }
@@ -196,12 +193,10 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
 .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
 .footer-links a { font-size: 0.72rem; color: var(--text-dim); text-decoration: none; transition: color 0.3s; }
 .footer-links a:hover { color: var(--gold); }
-
 /* ANIMATIONS */
 .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
-
-/* ══ RESPONSIVE MÓVIL ══ */
+/* ══ RESPONSIVE ══ */
 @media (max-width: 1024px) {
   .zones-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -219,8 +214,11 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
   .btn-primary, .btn-secondary { width: 100%; padding: 15px 20px; }
   .hero-stats { display: none; }
   section { padding: 60px 5%; }
+  /* FOTO EN MÓVIL — visible en about, columna única */
   .about-grid { grid-template-columns: 1fr; gap: 30px; }
-  .about-image-wrap { display: none; }
+  .about-image-wrap { display: block; margin-top: 10px; }
+  .about-image-wrap::before { display: none; }
+  .about-img { height: 300px; width: 100%; object-fit: cover; object-position: center top; border-radius: 4px; }
   .services-grid { grid-template-columns: 1fr; }
   .service-card { padding: 30px 22px; }
   .guide-layout { grid-template-columns: 1fr; gap: 30px; }
@@ -242,7 +240,6 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
 </style>
 </head>
 <body>
-
 <nav>
   <a href="#" class="nav-logo">Felipe Paris</a>
   <div class="nav-links">
@@ -264,7 +261,6 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
     <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
 <div class="mobile-menu" id="mobileMenu">
   <a href="#about" onclick="toggleMenu()" data-i18n="nav_about">About</a>
   <a href="#services" onclick="toggleMenu()" data-i18n="nav_services">Services</a>
@@ -279,7 +275,6 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
     <button class="lang-btn" onclick="setLang('it');toggleMenu()">IT</button>
   </div>
 </div>
-
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-content">
@@ -304,9 +299,7 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
 <!-- ABOUT -->
 <section id="about">
   <div class="section-eyebrow" data-i18n="about_eyebrow">About me</div>
@@ -332,9 +325,7 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
 <!-- SERVICES -->
 <section id="services">
   <div class="section-eyebrow" data-i18n="services_eyebrow">What I offer</div>
@@ -373,7 +364,6 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
     </div>
   </div>
 </section>
-
 <!-- GUIDE -->
 <section id="guide">
   <div class="section-eyebrow" data-i18n="guide_eyebrow">The guide</div>
@@ -412,9 +402,7 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
 <!-- ZONES -->
 <section id="zones">
   <div class="section-eyebrow" data-i18n="zones_eyebrow">Zones & prices</div>
@@ -450,9 +438,7 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
 <!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="section-eyebrow" data-i18n="testi_eyebrow">Client feedback</div>
@@ -475,9 +461,7 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
     </div>
   </div>
 </section>
-
 <div class="divider"></div>
-
 <!-- BLOG -->
 <section id="blog">
   <div class="section-eyebrow" data-i18n="blog_eyebrow">Free resources</div>
@@ -503,9 +487,7 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
     </a>
   </div>
 </section>
-
 <div class="divider"></div>
-
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-eyebrow" data-i18n="contact_eyebrow">Get in touch</div>
@@ -563,7 +545,6 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
     </div>
   </div>
 </section>
-
 <footer>
   <div class="footer-logo">Felipe Paris — Costa del Sol Real Estate</div>
   <div class="footer-copy">© 2025 Felipe Paris · Black Onyx by Keller Williams · La Cala de Mijas</div>
@@ -572,7 +553,6 @@ footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-ite
     <a href="https://wa.me/34651059366">+34 651 059 366</a>
   </div>
 </footer>
-
 <script>
 const i18n = {
   en: {
@@ -752,9 +732,7 @@ const i18n = {
     form_sent:"Messaggio inviato!",form_sent2:"Ti contatterò entro 24 ore."
   }
 };
-
 let currentLang = 'en';
-
 function setLang(lang) {
   currentLang = lang;
   const t = i18n[lang];
@@ -767,11 +745,9 @@ function setLang(lang) {
     btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
   });
 }
-
 function toggleMenu() {
   document.getElementById('mobileMenu').classList.toggle('open');
 }
-
 document.addEventListener('click', e => {
   const menu = document.getElementById('mobileMenu');
   const ham = document.querySelector('.hamburger');
@@ -779,12 +755,10 @@ document.addEventListener('click', e => {
     menu.classList.remove('open');
   }
 });
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
 const form = document.getElementById('contactForm');
 if (form) {
   form.addEventListener('submit', async e => {
