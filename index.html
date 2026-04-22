@@ -1,779 +1,2001 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Felipe Paris — Costa del Sol Real Estate Expert</title>
-<meta name="description" content="Buy property on the Costa del Sol with confidence. Expert guidance from Málaga to Marbella. 3+ years on the ground, fluent in 4 languages.">
-<!-- ── GOOGLE ANALYTICS ── -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-E745PWBHN6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-E745PWBHN6');
-</script>
-<!-- ─────────────────────── -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-:root {
-  --gold: #C9A96E;
-  --gold-light: #E8D5B0;
-  --navy: #0D1B2A;
-  --navy-mid: #162033;
-  --navy-light: #1E2E42;
-  --white: #FAF8F5;
-  --gray: #8A9BAD;
-  --text: #E8E4DC;
-  --text-dim: #7A8A99;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; background: var(--navy); color: var(--text); overflow-x: hidden; font-weight: 300; }
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  padding: 16px 5%;
-  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  background: rgba(13,27,42,0.97); backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(201,169,110,0.1);
-}
-.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold); text-decoration: none; white-space: nowrap; }
-.nav-links { display: flex; gap: 2rem; align-items: center; }
-.nav-links a { color: var(--gray); text-decoration: none; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
-.nav-links a:hover { color: var(--gold); }
-.nav-right { display: flex; align-items: center; gap: 1rem; }
-.lang-switcher { display: flex; gap: 4px; }
-.lang-btn { background: none; border: 1px solid transparent; font-size: 0.72rem; color: var(--text-dim); cursor: pointer; padding: 3px 7px; border-radius: 3px; transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
-.lang-btn:hover { color: var(--gold); border-color: rgba(201,169,110,0.3); }
-.lang-btn.active { color: var(--gold); border-color: var(--gold); }
-.nav-cta { border: 1px solid var(--gold); color: var(--gold); padding: 7px 18px; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; transition: all 0.3s; white-space: nowrap; }
-.nav-cta:hover { background: var(--gold); color: var(--navy); }
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
-.hamburger span { display: block; width: 22px; height: 2px; background: var(--gold); border-radius: 2px; }
-.mobile-menu { display: none; position: fixed; top: 57px; left: 0; right: 0; background: rgba(13,27,42,0.99); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,169,110,0.15); padding: 16px 5%; flex-direction: column; z-index: 199; }
-.mobile-menu.open { display: flex; }
-.mobile-menu a { color: var(--gray); text-decoration: none; font-size: 0.88rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.05); transition: color 0.3s; }
-.mobile-menu a:hover { color: var(--gold); }
-.mobile-lang { display: flex; gap: 8px; padding: 14px 0; }
-/* HERO */
-.hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 57px; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 70% 50%, rgba(201,169,110,0.06) 0%, transparent 70%); pointer-events: none; }
-.hero-content { display: flex; flex-direction: column; justify-content: center; padding: 80px 5% 80px 8%; position: relative; z-index: 2; }
-.hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
-.hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
-.hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 4.5vw, 5rem); font-weight: 300; line-height: 1.1; color: var(--white); margin-bottom: 1.5rem; }
-.hero-title em { font-style: italic; color: var(--gold); }
-.hero-subtitle { font-size: 0.95rem; color: var(--gray); line-height: 1.75; max-width: 420px; margin-bottom: 2.5rem; }
-.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
-.hero-langs { display: flex; gap: 0.7rem; align-items: center; }
-.hero-langs span { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); }
-.flag { font-size: 1.3rem; }
-.hero-image { position: relative; overflow: hidden; }
-.hero-image::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, var(--navy) 0%, transparent 30%); z-index: 1; }
-.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: grayscale(20%); }
-.hero-stats { position: absolute; bottom: 50px; left: 0; z-index: 3; display: flex; gap: 1px; }
-.stat { background: rgba(13,27,42,0.92); backdrop-filter: blur(10px); border: 1px solid rgba(201,169,110,0.2); padding: 18px 24px; text-align: center; }
-.stat-number { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 300; color: var(--gold); display: block; line-height: 1; }
-.stat-label { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); display: block; margin-top: 4px; }
-/* BUTTONS */
-.btn-primary { background: var(--gold); color: var(--navy); padding: 13px 28px; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; font-weight: 500; transition: all 0.3s; border: none; cursor: pointer; display: inline-block; text-align: center; }
-.btn-primary:hover { background: var(--gold-light); }
-.btn-secondary { background: transparent; color: var(--text); padding: 13px 28px; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: 2px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s; display: inline-block; text-align: center; }
-.btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
-.divider { height: 1px; background: linear-gradient(to right, transparent, rgba(201,169,110,0.3), transparent); margin: 0 5%; }
-/* SECTIONS */
-section { padding: 90px 8%; }
-.section-eyebrow { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-.section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight: 300; color: var(--white); line-height: 1.2; margin-bottom: 1.5rem; }
-.section-title em { font-style: italic; color: var(--gold); }
-/* ABOUT */
-.about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 70px; align-items: center; margin-top: 50px; }
-.about-text p { color: var(--gray); line-height: 1.8; margin-bottom: 1.4rem; font-size: 0.92rem; }
-.about-langs { display: flex; gap: 0.8rem; flex-wrap: wrap; margin: 1.8rem 0; }
-.lang-tag { padding: 7px 14px; border: 1px solid rgba(201,169,110,0.25); border-radius: 2px; font-size: 0.78rem; color: var(--text-dim); }
-.about-contact { display: flex; gap: 1rem; flex-wrap: wrap; }
-.contact-link { display: flex; align-items: center; gap: 0.5rem; padding: 11px 22px; border: 1px solid rgba(201,169,110,0.3); border-radius: 2px; text-decoration: none; color: var(--gold); font-size: 0.8rem; transition: all 0.3s; }
-.contact-link:hover { background: rgba(201,169,110,0.1); }
-.about-image-wrap { position: relative; }
-.about-image-wrap::before { content: ''; position: absolute; top: -16px; right: -16px; bottom: 16px; left: 16px; border: 1px solid rgba(201,169,110,0.2); border-radius: 2px; z-index: 0; }
-.about-img { width: 100%; height: 460px; object-fit: cover; border-radius: 2px; position: relative; z-index: 1; filter: grayscale(15%); }
-/* SERVICES */
-#services { background: var(--navy-mid); }
-.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 50px; }
-.service-card { background: var(--navy-light); padding: 45px; position: relative; overflow: hidden; transition: background 0.3s; }
-.service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(to right, transparent, var(--gold), transparent); opacity: 0; transition: opacity 0.3s; }
-.service-card:hover { background: rgba(30,46,66,0.8); }
-.service-card:hover::before { opacity: 1; }
-.service-badge { display: inline-block; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 4px 12px; border-radius: 1px; margin-bottom: 1.8rem; }
-.service-icon { font-size: 1.8rem; margin-bottom: 1.3rem; display: block; }
-.service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 300; color: var(--white); margin-bottom: 1rem; }
-.service-card p { color: var(--gray); line-height: 1.7; font-size: 0.88rem; margin-bottom: 1.8rem; }
-.service-price { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--gold); margin-bottom: 1.5rem; }
-.service-price small { font-size: 0.82rem; color: var(--text-dim); font-family: 'DM Sans', sans-serif; }
-.service-features { list-style: none; margin-bottom: 2.5rem; }
-.service-features li { padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.83rem; color: var(--gray); display: flex; align-items: center; gap: 0.8rem; }
-.service-features li::before { content: '—'; color: var(--gold); font-size: 0.7rem; }
-/* GUIDE */
-.guide-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 70px; align-items: center; margin-top: 50px; }
-.guide-cover { background: var(--navy-light); border: 1px solid rgba(201,169,110,0.2); border-radius: 4px; padding: 44px 38px; position: relative; overflow: hidden; }
-.guide-cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at top right, rgba(201,169,110,0.08) 0%, transparent 60%); }
-.guide-cover-title { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--white); margin-bottom: 0.4rem; position: relative; }
-.guide-cover-sub { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2rem; position: relative; }
-.guide-chapters { list-style: none; position: relative; }
-.guide-chapters li { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.83rem; color: var(--gray); display: flex; align-items: center; gap: 1rem; }
-.chapter-num { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--gold); min-width: 22px; }
-.guide-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 1.8rem; padding-top: 1.8rem; border-top: 1px solid rgba(201,169,110,0.2); position: relative; }
-.guide-footer-langs { display: flex; gap: 0.4rem; font-size: 1.2rem; }
-.guide-tag { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); }
-.guide-price-old { font-size: 1rem; color: var(--text-dim); text-decoration: line-through; margin-bottom: 0.3rem; }
-.guide-price { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.4rem; }
-.guide-price-note { font-size: 0.72rem; color: var(--text-dim); letter-spacing: 0.1em; margin-bottom: 1.8rem; }
-.guide-guarantees { list-style: none; margin-bottom: 2rem; }
-.guide-guarantees li { font-size: 0.82rem; color: var(--gray); padding: 5px 0; display: flex; align-items: center; gap: 0.7rem; }
-.guide-guarantees li::before { content: '✓'; color: var(--gold); }
-/* ZONES */
-#zones { background: var(--navy-mid); }
-.zones-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 50px; }
-.zone-card { background: var(--navy-light); padding: 36px 28px; transition: all 0.3s; position: relative; overflow: hidden; }
-.zone-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s; }
-.zone-card:hover { background: rgba(30,46,66,0.9); }
-.zone-card:hover::after { transform: scaleX(1); }
-.zone-icon { font-size: 1.6rem; margin-bottom: 1.2rem; display: block; }
-.zone-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--white); margin-bottom: 0.4rem; }
-.zone-price { font-size: 0.75rem; color: var(--gold); margin-bottom: 0.9rem; display: block; }
-.zone-desc { font-size: 0.8rem; color: var(--gray); line-height: 1.6; margin-bottom: 0.9rem; }
-.zone-best { font-size: 0.7rem; color: var(--text-dim); padding-top: 0.9rem; border-top: 1px solid rgba(255,255,255,0.06); }
-.zone-best strong { color: #E8D5B0; }
-/* TESTIMONIALS */
-.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 50px; }
-.testimonial { background: var(--navy-light); padding: 36px; position: relative; }
-.testimonial::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: rgba(201,169,110,0.1); position: absolute; top: 8px; left: 22px; line-height: 1; }
-.testimonial-text { font-size: 0.88rem; color: var(--gray); line-height: 1.75; margin-bottom: 1.8rem; position: relative; font-style: italic; }
-.testimonial-stars { color: var(--gold); font-size: 0.78rem; margin-bottom: 0.8rem; }
-.testimonial-author strong { display: block; font-size: 0.83rem; color: var(--white); font-weight: 400; margin-bottom: 0.2rem; }
-.testimonial-author span { font-size: 0.73rem; color: var(--text-dim); }
-/* BLOG */
-#blog { background: var(--navy-mid); }
-.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 50px; }
-.blog-card { background: var(--navy-light); padding: 36px; text-decoration: none; display: block; transition: background 0.3s; }
-.blog-card:hover { background: rgba(30,46,66,0.9); }
-.blog-category { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.3rem; display: block; }
-.blog-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; color: var(--white); line-height: 1.4; margin-bottom: 0.9rem; }
-.blog-card p { font-size: 0.8rem; color: var(--gray); line-height: 1.65; margin-bottom: 1.8rem; }
-.blog-read-more { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
-/* CONTACT */
-.contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 70px; margin-top: 50px; align-items: start; }
-.contact-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--white); margin-bottom: 1rem; }
-.contact-info p { font-size: 0.86rem; color: var(--gray); line-height: 1.7; margin-bottom: 2rem; }
-.contact-channels { display: flex; flex-direction: column; gap: 1rem; }
-.channel { display: flex; align-items: center; gap: 1rem; text-decoration: none; padding: 14px 18px; border: 1px solid rgba(201,169,110,0.15); border-radius: 2px; transition: all 0.3s; }
-.channel:hover { border-color: var(--gold); background: rgba(201,169,110,0.05); }
-.channel-icon { width: 34px; height: 34px; background: rgba(201,169,110,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; }
-.channel-info strong { display: block; font-size: 0.8rem; color: var(--white); font-weight: 400; }
-.channel-info span { font-size: 0.73rem; color: var(--text-dim); }
-.contact-form { background: var(--navy-light); padding: 44px; border: 1px solid rgba(201,169,110,0.1); }
-.form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--white); margin-bottom: 1.8rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.form-group { margin-bottom: 1.1rem; }
-.form-group label { display: block; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.5rem; }
-.form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 2px; padding: 11px 14px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.86rem; font-weight: 300; transition: border-color 0.3s; outline: none; }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
-.form-group select option { background: var(--navy-mid); }
-.form-group textarea { resize: vertical; min-height: 110px; }
-.form-submit { width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 15px; font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; border-radius: 2px; transition: all 0.3s; margin-top: 0.4rem; }
-.form-submit:hover { background: var(--gold-light); }
-.form-note { font-size: 0.7rem; color: var(--text-dim); margin-top: 1rem; text-align: center; }
-.form-success { display: none; text-align: center; padding: 40px; color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; }
-/* FOOTER */
-footer { background: var(--navy-mid); padding: 36px 8%; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(201,169,110,0.1); flex-wrap: wrap; gap: 1rem; }
-.footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--gold); }
-.footer-copy { font-size: 0.72rem; color: var(--text-dim); }
-.footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
-.footer-links a { font-size: 0.72rem; color: var(--text-dim); text-decoration: none; transition: color 0.3s; }
-.footer-links a:hover { color: var(--gold); }
-/* ANIMATIONS */
-.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.fade-up.visible { opacity: 1; transform: translateY(0); }
-/* ══ RESPONSIVE ══ */
-@media (max-width: 1024px) {
-  .zones-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 768px) {
-  nav { padding: 14px 5%; }
-  .nav-links { display: none; }
-  .lang-switcher { display: none; }
-  .hamburger { display: flex; }
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-image { display: none; }
-  .hero-content { padding: 55px 5% 50px; }
-  .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
-  .hero-subtitle { max-width: 100%; font-size: 0.9rem; }
-  .hero-btns { flex-direction: column; gap: 0.8rem; }
-  .btn-primary, .btn-secondary { width: 100%; padding: 15px 20px; }
-  .hero-stats { display: none; }
-  section { padding: 60px 5%; }
-  /* FOTO EN MÓVIL — visible en about, columna única */
-  .about-grid { grid-template-columns: 1fr; gap: 30px; }
-  .about-image-wrap { display: block; margin-top: 10px; }
-  .about-image-wrap::before { display: none; }
-  .about-img { height: 300px; width: 100%; object-fit: cover; object-position: center top; border-radius: 4px; }
-  .services-grid { grid-template-columns: 1fr; }
-  .service-card { padding: 30px 22px; }
-  .guide-layout { grid-template-columns: 1fr; gap: 30px; }
-  .guide-cover { padding: 26px 22px; }
-  .zones-grid { grid-template-columns: 1fr; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .contact-layout { grid-template-columns: 1fr; gap: 30px; }
-  .contact-form { padding: 26px 18px; }
-  .form-row { grid-template-columns: 1fr; }
-  footer { flex-direction: column; align-items: flex-start; padding: 28px 5%; }
-  .guide-price { font-size: 2.6rem; }
-}
-@media (max-width: 480px) {
-  .hero-title { font-size: 2rem; }
-  .section-title { font-size: 1.8rem; }
-  .nav-logo { font-size: 1rem; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Felipe Paris | Real Estate Costa del Sol</title>
+  <meta name="description" content="Agente inmobiliario experto en la Costa del Sol. Guía de compra y servicio Personal Shopper para encontrar tu propiedad ideal en Marbella y alrededores.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d1b2a;
+      --navy-light: #1a2e45;
+      --gold: #c9a84c;
+      --gold-light: #e2c06b;
+      --cream: #f8f5ef;
+      --white: #ffffff;
+      --gray: #6b7280;
+      --gray-light: #f3f4f6;
+      --text: #1a1a2e;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(13,27,42,0.10);
+      --shadow-lg: 0 12px 48px rgba(13,27,42,0.18);
+      --transition: 0.4s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; }
+
+    img { display: block; width: 100%; }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-scale.visible { opacity: 1; transform: scale(1); }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+
+    /* ─── NAVIGATION ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 clamp(1rem, 4vw, 3rem);
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background var(--transition), box-shadow var(--transition);
+    }
+    nav.scrolled {
+      background: rgba(13,27,42,0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 24px rgba(0,0,0,0.25);
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .nav-logo span:first-child {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: var(--white);
+      font-weight: 600;
+    }
+    .nav-logo span:last-child {
+      font-size: 0.7rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: color var(--transition);
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* Language switcher */
+    .lang-switcher {
+      display: flex;
+      gap: 0.4rem;
+      align-items: center;
+      margin-left: 1rem;
+    }
+    .lang-btn {
+      background: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 0.3rem 0.55rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: 'Inter', sans-serif;
+    }
+    .lang-btn:hover, .lang-btn.active {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: rgba(13,27,42,0.98);
+      backdrop-filter: blur(12px);
+      padding: 1.5rem clamp(1rem, 4vw, 3rem) 2rem;
+      z-index: 999;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: rgba(255,255,255,0.85);
+      font-size: 1rem;
+      font-weight: 500;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .mobile-lang {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: -15%;
+      background-image: url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1800&q=80');
+      background-size: cover;
+      background-position: center center;
+      will-change: transform;
+      transform-origin: center center;
+      transition: opacity 1s ease;
+      opacity: 0;
+    }
+    .hero-bg.loaded { opacity: 1; }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(13,27,42,0.35) 0%,
+        rgba(13,27,42,0.2) 40%,
+        rgba(13,27,42,0.85) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 6rem clamp(1.5rem, 6vw, 6rem) clamp(4rem, 8vw, 7rem);
+      max-width: 900px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold-light);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.3s ease forwards;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4.2rem);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.5s ease forwards;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(255,255,255,0.8);
+      max-width: 560px;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.7s ease forwards;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.9s ease forwards;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      transition: var(--transition);
+      border: 2px solid var(--gold);
+      cursor: pointer;
+      letter-spacing: 0.03em;
+    }
+    .btn-primary:hover {
+      background: var(--gold-light);
+      border-color: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.35);
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: var(--transition);
+      cursor: pointer;
+      letter-spacing: 0.03em;
+    }
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-2px);
+    }
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      right: clamp(1.5rem, 6vw, 6rem);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeUp 1s 1.2s ease forwards;
+    }
+    .scroll-line {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.3);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--navy);
+      padding: 2rem clamp(1.5rem, 6vw, 6rem);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.4rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* ─── SECTION COMMON ─── */
+    .section {
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 6vw, 6rem);
+    }
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--gray);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+    .divider {
+      width: 48px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 1.25rem 0;
+    }
+
+    /* ─── ABOUT ─── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+      margin-top: 3rem;
+    }
+    .about-img-wrap {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: var(--shadow-lg);
+    }
+    .about-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .about-img-badge {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.75rem;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .about-text { }
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .about-feature {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .feature-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(201,168,76,0.12);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .feature-text strong {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+    .feature-text span {
+      font-size: 0.78rem;
+      color: var(--gray);
+    }
+    .langs-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+    .lang-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: var(--gray-light);
+      border-radius: 100px;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    /* ─── SERVICES ─── */
+    .services-bg { background: var(--cream); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .service-card.featured {
+      border: 2px solid var(--gold);
+    }
+    .service-img {
+      height: 220px;
+      overflow: hidden;
+    }
+    .service-img img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .service-card:hover .service-img img { transform: scale(1.05); }
+    .service-body {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-badge {
+      display: inline-block;
+      background: rgba(201,168,76,0.12);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+    .service-badge.premium {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .service-title {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+    .service-desc {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .service-list {
+      list-style: none;
+      margin-bottom: 2rem;
+      flex: 1;
+    }
+    .service-list li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      font-size: 0.85rem;
+      color: var(--text);
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--gray-light);
+    }
+    .service-list li:last-child { border-bottom: none; }
+    .check { color: var(--gold); font-size: 0.9rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .service-price {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+    .price-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .price-currency { font-size: 1.4rem; color: var(--gold); }
+    .price-note {
+      font-size: 0.78rem;
+      color: var(--gray);
+      line-height: 1.4;
+    }
+    .btn-full {
+      width: 100%;
+      text-align: center;
+      justify-content: center;
+    }
+
+    /* ─── ZONES ─── */
+    .zones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .zone-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 4/3;
+      cursor: default;
+      box-shadow: var(--shadow);
+    }
+    .zone-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .zone-card:hover img { transform: scale(1.07); }
+    .zone-type-badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(201,168,76,0.92);
+      color: var(--navy);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.28rem 0.75rem;
+      border-radius: 100px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      z-index: 2;
+      backdrop-filter: blur(4px);
+    }
+    .zone-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,27,42,0.9) 0%, transparent 55%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.25rem;
+    }
+    .zone-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--white);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .zone-price {
+      font-size: 0.8rem;
+      color: var(--gold-light);
+      font-weight: 500;
+    }
+
+    /* ─── HOW IT WORKS ─── */
+    .how-bg { background: var(--navy); }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+    .how-grid::before {
+      content: '';
+      position: absolute;
+      top: 2.2rem;
+      left: 2.5rem;
+      right: 2.5rem;
+      height: 2px;
+      background: rgba(201,168,76,0.2);
+    }
+    .how-step { text-align: center; position: relative; }
+    .step-num {
+      width: 48px;
+      height: 48px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+    .step-title {
+      font-size: 1rem;
+      color: var(--white);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.5rem;
+    }
+    .step-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials-bg { background: var(--cream); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      transition: transform var(--transition);
+    }
+    .testimonial-card:hover { transform: translateY(-4px); }
+    .stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 0.1em; }
+    .testimonial-text {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text);
+      font-style: italic;
+      flex: 1;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .author-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .author-name {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--navy);
+    }
+    .author-meta {
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+
+    /* ─── FAQ ─── */
+    .faq-list {
+      margin-top: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 760px;
+    }
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      cursor: pointer;
+      gap: 1rem;
+    }
+    .faq-q-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .faq-icon {
+      width: 24px;
+      height: 24px;
+      background: var(--gray-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      transition: transform var(--transition);
+      color: var(--gold);
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      font-size: 0.88rem;
+      color: var(--gray);
+      line-height: 1.7;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding-bottom: 1.25rem;
+    }
+
+    /* ─── CONTACT ─── */
+    .contact-bg { background: var(--navy); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+      margin-top: 3rem;
+    }
+    .contact-info {}
+    .contact-info .section-title { color: var(--white); }
+    .contact-info .section-sub { color: rgba(255,255,255,0.6); }
+    .contact-items {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(201,168,76,0.15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .contact-item-label {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.2rem;
+    }
+    .contact-item-value {
+      font-size: 0.9rem;
+      color: var(--white);
+      font-weight: 500;
+    }
+    .contact-item-value a {
+      color: var(--gold-light);
+      transition: color var(--transition);
+    }
+    .contact-item-value a:hover { color: var(--gold); }
+
+    /* Contact form */
+    .contact-form {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .form-input, .form-select, .form-textarea {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 6px;
+      padding: 0.7rem 0.9rem;
+      font-size: 0.9rem;
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      transition: border-color var(--transition);
+      outline: none;
+    }
+    .form-select option { background: var(--navy); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-textarea { resize: vertical; min-height: 110px; }
+    .form-submit {
+      grid-column: 1 / -1;
+      margin-top: 0.5rem;
+    }
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #25d366;
+      color: white;
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.85rem 1.6rem;
+      border-radius: 6px;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      margin-top: 1rem;
+      width: 100%;
+      justify-content: center;
+    }
+    .whatsapp-btn:hover {
+      background: #1da851;
+      transform: translateY(-2px);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #080f18;
+      padding: 3rem clamp(1.5rem, 6vw, 6rem);
+    }
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .footer-logo span:first-child {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--white);
+      display: block;
+    }
+    .footer-logo span:last-child {
+      font-size: 0.7rem;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .footer-legal {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.3);
+      text-align: center;
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .footer-links a {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      transition: color var(--transition);
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ─── BACK TO TOP ─── */
+    .back-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 900;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity var(--transition), transform var(--transition);
+      box-shadow: 0 4px 16px rgba(201,168,76,0.4);
+    }
+    .back-top.show {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+    .back-top:hover { background: var(--gold-light); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .nav-links, .lang-switcher { display: none; }
+      .hamburger { display: flex; }
+
+      .about-grid { grid-template-columns: 1fr; }
+      .about-img-wrap { aspect-ratio: 3/2; max-height: 320px; }
+      .about-features { grid-template-columns: 1fr; }
+
+      .services-grid { grid-template-columns: 1fr; }
+
+      .contact-grid { grid-template-columns: 1fr; }
+
+      .how-grid::before { display: none; }
+
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full { grid-column: 1; }
+      .form-submit { grid-column: 1; }
+
+      .footer-inner { flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-<nav>
-  <a href="#" class="nav-logo">Felipe Paris</a>
-  <div class="nav-links">
-    <a href="#about" data-i18n="nav_about">About</a>
-    <a href="#services" data-i18n="nav_services">Services</a>
-    <a href="#guide" data-i18n="nav_guide">Guide</a>
-    <a href="#zones" data-i18n="nav_zones">Zones</a>
-    <a href="#blog" data-i18n="nav_blog">Resources</a>
-    <a href="#contact" data-i18n="nav_contact">Contact</a>
+
+<!-- ─────────── NAVIGATION ─────────── -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <span>Felipe Paris</span>
+    <span data-i18n="nav_subtitle">Costa del Sol · Real Estate</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#about" data-i18n="nav_about">Sobre mí</a></li>
+    <li><a href="#services" data-i18n="nav_services">Servicios</a></li>
+    <li><a href="#zones" data-i18n="nav_zones">Zonas</a></li>
+    <li><a href="#process" data-i18n="nav_process">Proceso</a></li>
+    <li><a href="#contact" data-i18n="nav_contact">Contacto</a></li>
+  </ul>
+
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('it')">IT</button>
   </div>
-  <div class="nav-right">
-    <div class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('es')">ES</button>
-      <button class="lang-btn" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" onclick="setLang('it')">IT</button>
-    </div>
-    <a href="#guide" class="nav-cta" data-i18n="nav_cta">Get the Guide</a>
-    <button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
-  </div>
+
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="toggleMenu()" data-i18n="nav_about">About</a>
-  <a href="#services" onclick="toggleMenu()" data-i18n="nav_services">Services</a>
-  <a href="#guide" onclick="toggleMenu()" data-i18n="nav_guide">Guide</a>
-  <a href="#zones" onclick="toggleMenu()" data-i18n="nav_zones">Zones</a>
-  <a href="#blog" onclick="toggleMenu()" data-i18n="nav_blog">Resources</a>
-  <a href="#contact" onclick="toggleMenu()" data-i18n="nav_contact">Contact</a>
+  <a href="#about" onclick="closeMenu()" data-i18n="nav_about">Sobre mí</a>
+  <a href="#services" onclick="closeMenu()" data-i18n="nav_services">Servicios</a>
+  <a href="#zones" onclick="closeMenu()" data-i18n="nav_zones">Zonas</a>
+  <a href="#process" onclick="closeMenu()" data-i18n="nav_process">Proceso</a>
+  <a href="#contact" onclick="closeMenu()" data-i18n="nav_contact">Contacto</a>
   <div class="mobile-lang">
-    <button class="lang-btn active" onclick="setLang('en');toggleMenu()">EN</button>
-    <button class="lang-btn" onclick="setLang('es');toggleMenu()">ES</button>
-    <button class="lang-btn" onclick="setLang('fr');toggleMenu()">FR</button>
-    <button class="lang-btn" onclick="setLang('it');toggleMenu()">IT</button>
+    <button class="lang-btn active" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('it')">IT</button>
   </div>
 </div>
-<!-- HERO -->
-<section class="hero" id="home">
+
+<!-- ─────────── HERO ─────────── -->
+<section class="hero" id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow" data-i18n="hero_eyebrow">Costa del Sol Specialist</div>
-    <h1 class="hero-title" data-i18n="hero_title">Buy Property<br>on the <em>Costa del Sol</em><br>with Confidence</h1>
-    <p class="hero-subtitle" data-i18n="hero_subtitle">Expert guidance from Málaga to Marbella. 3+ years on the ground, fluent in 4 languages — so you never get lost in translation.</p>
-    <div class="hero-btns">
-      <a href="#guide" class="btn-primary" data-i18n="hero_btn1">📘 Get the €49 Guide</a>
-      <a href="#contact" class="btn-secondary" data-i18n="hero_btn2">Hire a Property Shopper</a>
+    <div class="hero-badge">
+      <span>✦</span>
+      <span data-i18n="hero_badge">Agente Inmobiliario · Costa del Sol</span>
     </div>
-    <div class="hero-langs">
-      <span data-i18n="hero_speak">I speak</span>
-      <span class="flag">🇬🇧</span><span class="flag">🇪🇸</span><span class="flag">🇫🇷</span><span class="flag">🇮🇹</span>
+    <h1 data-i18n="hero_title">Tu experto para comprar en la <em>Costa del Sol</em></h1>
+    <p class="hero-sub" data-i18n="hero_sub">Hablo tu idioma. Conozco el mercado. Te acompaño desde la primera búsqueda hasta las llaves en tu mano.</p>
+    <div class="hero-ctas">
+      <a href="#services" class="btn-primary" data-i18n="hero_cta1">Ver servicios</a>
+      <a href="#contact" class="btn-outline" data-i18n="hero_cta2">Hablar con Felipe</a>
     </div>
   </div>
-  <div class="hero-image">
-    <img src="felipe-paris.jpg" alt="Felipe Paris" class="hero-photo">
-    <div class="hero-stats">
-      <div class="stat"><span class="stat-number">3+</span><span class="stat-label" data-i18n="stat_years">Years on coast</span></div>
-      <div class="stat"><span class="stat-number">4</span><span class="stat-label" data-i18n="stat_langs">Languages</span></div>
-      <div class="stat"><span class="stat-number">€49</span><span class="stat-label" data-i18n="stat_guide">Complete guide</span></div>
+  <div class="hero-scroll-hint">
+    <div class="scroll-line"></div>
+    <span data-i18n="hero_scroll">Descubre más</span>
+  </div>
+</section>
+
+<!-- ─────────── STATS ─────────── -->
+<section class="stats-bar">
+  <div class="stats-grid">
+    <div class="stat-item reveal delay-1">
+      <div class="stat-num">4</div>
+      <div class="stat-label" data-i18n="stat1">Idiomas</div>
+    </div>
+    <div class="stat-item reveal delay-2">
+      <div class="stat-num">3+</div>
+      <div class="stat-label" data-i18n="stat2">Años en el mercado</div>
+    </div>
+    <div class="stat-item reveal delay-3">
+      <div class="stat-num">100%</div>
+      <div class="stat-label" data-i18n="stat3">Dedicación al cliente</div>
+    </div>
+    <div class="stat-item reveal delay-4">
+      <div class="stat-num">KW</div>
+      <div class="stat-label" data-i18n="stat4">Black Onyx · Keller Williams</div>
     </div>
   </div>
 </section>
-<div class="divider"></div>
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-eyebrow" data-i18n="about_eyebrow">About me</div>
-  <h2 class="section-title" data-i18n="about_title">Your local expert —<br><em>speaking your language</em></h2>
-  <div class="about-grid">
-    <div class="about-text fade-up">
-      <p data-i18n="about_p1">I'm Felipe Paris, a real estate specialist based on the Costa del Sol with over 3 years of hands-on experience across the Málaga–Marbella corridor.</p>
-      <p data-i18n="about_p2">What makes me different? I speak English, Spanish, French, and Italian natively — guiding you through every step in your language, with zero misunderstandings.</p>
-      <p data-i18n="about_p3">I work with Black Onyx by Keller Williams, one of the largest real estate networks in the world, with offices right here on the Costa del Sol.</p>
-      <div class="about-langs">
-        <div class="lang-tag">🇬🇧 English</div>
-        <div class="lang-tag">🇪🇸 Español</div>
-        <div class="lang-tag">🇫🇷 Français</div>
-        <div class="lang-tag">🇮🇹 Italiano</div>
+
+<!-- ─────────── ABOUT ─────────── -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal-left">
+        <img
+          src="https://felipeparis-hub.github.io/FelipeParisRealstateCostaDelSol-/felipe-paris.jpg"
+          alt="Felipe Paris — Agente Inmobiliario Costa del Sol"
+          onerror="this.src='https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=600&q=80'"
+        >
+        <div class="about-img-badge">Black Onyx · Keller Williams</div>
       </div>
-      <div class="about-contact">
-        <a href="https://wa.me/34651059366" class="contact-link">💬 WhatsApp</a>
-        <a href="mailto:felipeparisvazquez@gmail.com" class="contact-link">✉️ Email</a>
-      </div>
-    </div>
-    <div class="about-image-wrap fade-up" style="transition-delay:0.2s">
-      <img src="felipe-paris.jpg" alt="Felipe Paris" class="about-img">
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-eyebrow" data-i18n="services_eyebrow">What I offer</div>
-  <h2 class="section-title" data-i18n="services_title">Two ways I can<br><em>help you buy</em></h2>
-  <div class="services-grid">
-    <div class="service-card fade-up">
-      <span class="service-icon">📘</span>
-      <h3 data-i18n="s1_title">Investment Guide</h3>
-      <p data-i18n="s1_desc">The complete insider's guide to buying property on the Costa del Sol. Zones, prices, legal process, real taxes and negotiation tactics — in 4 languages.</p>
-      <div class="service-price">€49 <small data-i18n="s1_dl">instant download</small></div>
-      <ul class="service-features">
-        <li data-i18n="sf1">Best zones & price per m² analysis</li>
-        <li data-i18n="sf2">Step-by-step legal buying process</li>
-        <li data-i18n="sf3">Real taxes & fees breakdown</li>
-        <li data-i18n="sf4">Holiday rental yield by zone</li>
-        <li data-i18n="sf5">Price negotiation tactics</li>
-        <li data-i18n="sf6">Available in EN / ES / FR / IT</li>
-      </ul>
-      <a href="https://parisvazquez.gumroad.com/l/jyiwnv" class="btn-primary" data-i18n="btn_access">Get Instant Access →</a>
-    </div>
-    <div class="service-card fade-up" style="transition-delay:0.15s">
-      <span class="service-badge" data-i18n="badge_premium">Premium</span>
-      <span class="service-icon">🏡</span>
-      <h3 data-i18n="s2_title">Personal Property Shopper</h3>
-      <p data-i18n="s2_desc">I become your exclusive buyer's agent — from search and viewings to document review and notary signing. I handle everything.</p>
-      <div class="service-price">€499 <small data-i18n="s2_price_note">entry · then 2.5% + VAT at signing</small></div>
-      <ul class="service-features">
-        <li data-i18n="ps1">Initial consultation included</li>
-        <li data-i18n="ps2">Full property search & viewings</li>
-        <li data-i18n="ps3">Investment & rental yield analysis</li>
-        <li data-i18n="ps4">Document & legal review</li>
-        <li data-i18n="ps5">Price negotiation on your behalf</li>
-        <li data-i18n="ps6">Full support until notary signing</li>
-      </ul>
-      <a href="https://wa.me/34651059366" class="btn-primary" data-i18n="btn_whatsapp">Start with WhatsApp →</a>
-    </div>
-  </div>
-</section>
-<!-- GUIDE -->
-<section id="guide">
-  <div class="section-eyebrow" data-i18n="guide_eyebrow">The guide</div>
-  <h2 class="section-title" data-i18n="guide_title"><em>How to Buy Property</em><br>on the Costa del Sol</h2>
-  <div class="guide-layout">
-    <div class="guide-cover fade-up">
-      <div class="guide-cover-title" data-i18n="guide_cover_title">How to Buy Property on the Costa del Sol</div>
-      <div class="guide-cover-sub" data-i18n="guide_cover_sub">6 Chapters · PDF · 4 Languages</div>
-      <ul class="guide-chapters">
-        <li><span class="chapter-num">01</span><span data-i18n="ch1">Best zones & price per m² — Málaga to Marbella</span></li>
-        <li><span class="chapter-num">02</span><span data-i18n="ch2">Step-by-step legal buying process in Spain</span></li>
-        <li><span class="chapter-num">03</span><span data-i18n="ch3">Real taxes & fees with exact numbers (2025)</span></li>
-        <li><span class="chapter-num">04</span><span data-i18n="ch4">Mistakes foreigners make — and how to avoid them</span></li>
-        <li><span class="chapter-num">05</span><span data-i18n="ch5">Holiday rental yield analysis by zone</span></li>
-        <li><span class="chapter-num">06</span><span data-i18n="ch6">How to negotiate the best price</span></li>
-      </ul>
-      <div class="guide-footer">
-        <div><div class="guide-tag" data-i18n="available_in">Available in</div><div class="guide-footer-langs">🇬🇧 🇪🇸 🇫🇷 🇮🇹</div></div>
-        <div class="guide-tag">PDF · Instant Download</div>
-      </div>
-    </div>
-    <div class="fade-up" style="transition-delay:0.2s">
-      <div class="guide-price-old">€79</div>
-      <div class="guide-price">€49</div>
-      <div class="guide-price-note" data-i18n="launch_price">Launch price — limited time</div>
-      <ul class="guide-guarantees">
-        <li data-i18n="g1">Instant PDF download after purchase</li>
-        <li data-i18n="g2">Available in 4 languages in one file</li>
-        <li data-i18n="g3">Real numbers, real zones, real process</li>
-        <li data-i18n="g4">Written by someone 3+ years on the ground</li>
-        <li data-i18n="g5">One-time payment, yours forever</li>
-      </ul>
-      <a href="https://parisvazquez.gumroad.com/l/jyiwnv" class="btn-primary" style="display:block;padding:15px;" data-i18n="btn_guide_cta">📘 Get Instant Access — €49</a>
-      <p style="font-size:0.73rem;color:var(--text-dim);text-align:center;margin-top:1rem;" data-i18n="guide_upsell">Want more? Book a private consultation — guide included.</p>
-      <a href="https://wa.me/34651059366" class="btn-secondary" style="display:block;padding:13px;margin-top:0.7rem;" data-i18n="btn_shopper_wa">💬 Ask about Property Shopper</a>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
-<!-- ZONES -->
-<section id="zones">
-  <div class="section-eyebrow" data-i18n="zones_eyebrow">Zones & prices</div>
-  <h2 class="section-title" data-i18n="zones_title">Where to buy on<br><em>the Costa del Sol</em></h2>
-  <div class="zones-grid">
-    <div class="zone-card fade-up">
-      <span class="zone-icon">🏙️</span>
-      <div class="zone-name">Málaga Capital</div>
-      <span class="zone-price">€2,200 – €4,500/m²</span>
-      <p class="zone-desc" data-i18n="z1_desc">The up-and-coming urban investment. Strong short-term rental yields, growing international profile, direct airport access.</p>
-      <div class="zone-best" data-i18n="z1_best">Best for: <strong>city apartments, rental income</strong></div>
-    </div>
-    <div class="zone-card fade-up" style="transition-delay:0.1s">
-      <span class="zone-icon">🌴</span>
-      <div class="zone-name">Marbella / Puerto Banús</div>
-      <span class="zone-price">€4,000 – €15,000+/m²</span>
-      <p class="zone-desc" data-i18n="z2_desc">The classic luxury destination. Villas, penthouses, world-class amenities. Strong UK, French and Arab buyer demand.</p>
-      <div class="zone-best" data-i18n="z2_best">Best for: <strong>prestige assets, capital growth</strong></div>
-    </div>
-    <div class="zone-card fade-up" style="transition-delay:0.2s">
-      <span class="zone-icon">🏖️</span>
-      <div class="zone-name">Torremolinos / Benalmádena</div>
-      <span class="zone-price">€1,600 – €3,000/m²</span>
-      <p class="zone-desc" data-i18n="z3_desc">Best value on the coast. High holiday rental occupancy, direct beach access, well-connected transport links.</p>
-      <div class="zone-best" data-i18n="z3_best">Best for: <strong>entry-level investment, first property</strong></div>
-    </div>
-    <div class="zone-card fade-up" style="transition-delay:0.3s">
-      <span class="zone-icon">⛳</span>
-      <div class="zone-name">Estepona / Nueva Andalucía</div>
-      <span class="zone-price">€2,500 – €6,000/m²</span>
-      <p class="zone-desc" data-i18n="z4_desc">The golf coast sweet spot. Newer developments, quieter lifestyle, strong French and Belgian buyer community.</p>
-      <div class="zone-best" data-i18n="z4_best">Best for: <strong>golf properties, retirement, long-term rentals</strong></div>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="section-eyebrow" data-i18n="testi_eyebrow">Client feedback</div>
-  <h2 class="section-title" data-i18n="testi_title">What clients<br><em>say about me</em></h2>
-  <div class="testimonials-grid">
-    <div class="testimonial fade-up">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text" data-i18n="t1">"Felipe explained the entire buying process in French from start to finish. We bought our apartment in Marbella in 4 months — completely stress-free."</p>
-      <div class="testimonial-author"><strong>Marie &amp; Pierre D.</strong><span>🇫🇷 Lyon, France</span></div>
-    </div>
-    <div class="testimonial fade-up" style="transition-delay:0.15s">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text" data-i18n="t2">"The €49 guide was the best investment before buying. It saved us from a very expensive mistake on the tax side."</p>
-      <div class="testimonial-author"><strong>James H.</strong><span>🇬🇧 London, UK</span></div>
-    </div>
-    <div class="testimonial fade-up" style="transition-delay:0.3s">
-      <div class="testimonial-stars">★★★★★</div>
-      <p class="testimonial-text" data-i18n="t3">"Ho trovato finalmente un agente che capisce cosa voglio. Felipe ha trovato la nostra villa a Estepona in meno di 2 mesi."</p>
-      <div class="testimonial-author"><strong>Marco &amp; Sofia R.</strong><span>🇮🇹 Milano, Italia</span></div>
-    </div>
-  </div>
-</section>
-<div class="divider"></div>
-<!-- BLOG -->
-<section id="blog">
-  <div class="section-eyebrow" data-i18n="blog_eyebrow">Free resources</div>
-  <h2 class="section-title" data-i18n="blog_title">Start here —<br><em>practical guides</em></h2>
-  <div class="blog-grid">
-    <a href="#contact" class="blog-card fade-up">
-      <span class="blog-category" data-i18n="blog_cat1">🏛️ Legal</span>
-      <h3 data-i18n="blog_h1">The NIE Number: What It Is, Why You Need It, and How to Get It</h3>
-      <p data-i18n="blog_p1">No NIE, no purchase. Here's exactly what to do, how long it takes, and how to avoid costly delays.</p>
-      <div class="blog-read-more" data-i18n="read_more">Read more →</div>
-    </a>
-    <a href="#contact" class="blog-card fade-up" style="transition-delay:0.15s">
-      <span class="blog-category" data-i18n="blog_cat2">💶 Taxes</span>
-      <h3 data-i18n="blog_h2">How Much Tax Do You Really Pay When Buying in Spain? (2025)</h3>
-      <p data-i18n="blog_p2">ITP, IVA, notary, registry — the full breakdown with real numbers so there are no surprises.</p>
-      <div class="blog-read-more" data-i18n="read_more">Read more →</div>
-    </a>
-    <a href="#contact" class="blog-card fade-up" style="transition-delay:0.3s">
-      <span class="blog-category" data-i18n="blog_cat3">📈 Investment</span>
-      <h3 data-i18n="blog_h3">Holiday Rental Yields on the Costa del Sol: Which Zones Perform Best?</h3>
-      <p data-i18n="blog_p3">I analysed occupancy rates and nightly rates across all main zones. Here's what the numbers show.</p>
-      <div class="blog-read-more" data-i18n="read_more">Read more →</div>
-    </a>
-  </div>
-</section>
-<div class="divider"></div>
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-eyebrow" data-i18n="contact_eyebrow">Get in touch</div>
-  <h2 class="section-title" data-i18n="contact_title">Ready to start your<br><em>Costa del Sol journey?</em></h2>
-  <div class="contact-layout">
-    <div>
-      <div class="contact-info">
-        <h3 data-i18n="contact_h3">I respond within 24 hours —<br>usually much faster.</h3>
-        <p data-i18n="contact_p">Whether you have a quick question or want to book a full consultation, reach out via WhatsApp for the fastest response.</p>
-      </div>
-      <div class="contact-channels">
-        <a href="https://wa.me/34651059366" class="channel">
-          <div class="channel-icon">💬</div>
-          <div class="channel-info"><strong data-i18n="ch_wa">WhatsApp (fastest)</strong><span>+34 651 059 366</span></div>
-        </a>
-        <a href="mailto:felipeparisvazquez@gmail.com" class="channel">
-          <div class="channel-icon">✉️</div>
-          <div class="channel-info"><strong>Email</strong><span>felipeparisvazquez@gmail.com</span></div>
-        </a>
-      </div>
-    </div>
-    <div class="contact-form">
-      <div class="form-title" data-i18n="form_title">Send me a message</div>
-      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form-row">
-          <div class="form-group">
-            <label data-i18n="form_name">Your name</label>
-            <input type="text" name="name" required placeholder="John Smith">
+      <div class="about-text reveal-right">
+        <div class="section-tag" data-i18n="about_tag">Sobre mí</div>
+        <h2 class="section-title" data-i18n="about_title">Felipe Paris,<br>tu agente de confianza</h2>
+        <div class="divider"></div>
+        <p class="section-sub" data-i18n="about_sub">Con más de 3 años en el mercado de la Costa del Sol y más de 4 idiomas a mi disposición, me especializo en ayudar a compradores internacionales a encontrar su propiedad ideal. Trabajo con Black Onyx by Keller Williams desde La Cala de Mijas.</p>
+
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="feature-icon">🏡</div>
+            <div class="feature-text">
+              <strong data-i18n="feat1_title">Mercado local</strong>
+              <span data-i18n="feat1_sub">Marbella, Estepona, Mijas y toda la Costa</span>
+            </div>
           </div>
-          <div class="form-group">
-            <label data-i18n="form_email">Email</label>
-            <input type="email" name="email" required placeholder="john@email.com">
+          <div class="about-feature">
+            <div class="feature-icon">⚖️</div>
+            <div class="feature-text">
+              <strong data-i18n="feat2_title">Asesoría legal</strong>
+              <span data-i18n="feat2_sub">NIE, notaría, impuestos y contratos</span>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon">🤝</div>
+            <div class="feature-text">
+              <strong data-i18n="feat3_title">Negociación</strong>
+              <span data-i18n="feat3_sub">Defiendo tu precio y tus intereses</span>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="feature-icon">🌍</div>
+            <div class="feature-text">
+              <strong data-i18n="feat4_title">Internacional</strong>
+              <span data-i18n="feat4_sub">Expat? Inversor? Jubilado? Te entiendo</span>
+            </div>
           </div>
         </div>
-        <div class="form-group">
-          <label data-i18n="form_interest">I'm interested in</label>
-          <select name="interest">
-            <option value="" data-i18n="form_select">Select an option...</option>
-            <option value="guide" data-i18n="form_opt1">The €49 Investment Guide</option>
-            <option value="shopper" data-i18n="form_opt2">Personal Property Shopper</option>
-            <option value="question" data-i18n="form_opt3">General Question</option>
-          </select>
+
+        <div class="langs-row">
+          <span class="lang-tag">🇪🇸 Español</span>
+          <span class="lang-tag">🇬🇧 English</span>
+          <span class="lang-tag">🇫🇷 Français</span>
+          <span class="lang-tag">🇮🇹 Italiano</span>
         </div>
-        <div class="form-group">
-          <label data-i18n="form_msg">Message</label>
-          <textarea name="message" placeholder="Tell me about what you're looking for..."></textarea>
-        </div>
-        <button type="submit" class="form-submit" data-i18n="form_submit">Send Message →</button>
-        <p class="form-note" data-i18n="form_note">✓ I respond within 24 hours · ✓ No spam, ever</p>
-      </form>
-      <div class="form-success" id="formSuccess">
-        ✓ <span data-i18n="form_sent">Message sent!</span><br>
-        <span style="font-size:0.95rem;color:var(--gray);font-family:'DM Sans',sans-serif;" data-i18n="form_sent2">I'll be in touch within 24 hours.</span>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ─────────── SERVICES ─────────── -->
+<section class="section services-bg" id="services">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center; margin-bottom: 3rem;">
+      <div class="section-tag" data-i18n="services_tag">Servicios</div>
+      <h2 class="section-title" data-i18n="services_title">Elige tu camino hacia la propiedad</h2>
+      <div class="divider" style="margin: 1rem auto;"></div>
+      <p class="section-sub" style="margin: 0 auto;" data-i18n="services_sub">Tanto si quieres hacerlo tú mismo con la guía correcta como si prefieres delegar todo en mí, tengo la solución perfecta.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- GUIDE CARD -->
+      <div class="service-card reveal-left">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=700&q=80" alt="Guía de compra inmobiliaria Costa del Sol">
+        </div>
+        <div class="service-body">
+          <span class="service-badge" data-i18n="guide_badge">Guía Digital</span>
+          <h3 class="service-title" data-i18n="guide_title">La Guía Definitiva para Comprar en la Costa del Sol</h3>
+          <p class="service-desc" data-i18n="guide_desc">Todo lo que necesitas saber antes de dar el primer paso. Zonas, impuestos, trámites legales, errores comunes y estrategias de negociación. Escrito por alguien que vive y trabaja aquí.</p>
+          <ul class="service-list">
+            <li><span class="check">✦</span><span data-i18n="g1">Guía de zonas y precios por m²</span></li>
+            <li><span class="check">✦</span><span data-i18n="g2">Proceso de compra paso a paso</span></li>
+            <li><span class="check">✦</span><span data-i18n="g3">Impuestos y costes ocultos</span></li>
+            <li><span class="check">✦</span><span data-i18n="g4">Cómo obtener el NIE</span></li>
+            <li><span class="check">✦</span><span data-i18n="g5">Errores que cometen los compradores</span></li>
+            <li><span class="check">✦</span><span data-i18n="g6">Consejos de negociación</span></li>
+          </ul>
+          <div class="service-price">
+            <span class="price-currency">€</span>
+            <span class="price-amount">39</span>
+            <span class="price-note" data-i18n="guide_price_note">Descarga inmediata<br>PDF completo</span>
+          </div>
+          <a href="#contact" class="btn-primary btn-full" data-i18n="guide_cta">Comprar la guía →</a>
+        </div>
+      </div>
+
+      <!-- PERSONAL SHOPPER CARD -->
+      <div class="service-card featured reveal-right">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1613977257592-4871e5fcd7c4?w=700&q=80" alt="Personal Shopper Inmobiliario Marbella">
+        </div>
+        <div class="service-body">
+          <span class="service-badge premium" data-i18n="ps_badge">Servicio Premium</span>
+          <h3 class="service-title" data-i18n="ps_title">Personal Shopper Inmobiliario</h3>
+          <p class="service-desc" data-i18n="ps_desc">Me convierto en tu agente exclusivo de compra. Yo busco, filtro, negocio y te acompaño en todo el proceso. Tú solo tienes que decir sí a la casa perfecta.</p>
+          <ul class="service-list">
+            <li><span class="check">✦</span><span data-i18n="p1">Búsqueda personalizada y filtrado</span></li>
+            <li><span class="check">✦</span><span data-i18n="p2">Visitas guiadas y análisis de cada propiedad</span></li>
+            <li><span class="check">✦</span><span data-i18n="p3">Negociación del precio a tu favor</span></li>
+            <li><span class="check">✦</span><span data-i18n="p4">Gestión del NIE y apertura de cuenta</span></li>
+            <li><span class="check">✦</span><span data-i18n="p5">Coordinación con abogados y notaría</span></li>
+            <li><span class="check">✦</span><span data-i18n="p6">Apoyo postventa incluido</span></li>
+          </ul>
+          <div class="service-price">
+            <span class="price-currency">€</span>
+            <span class="price-amount">499</span>
+            <span class="price-note" data-i18n="ps_price_note">Para iniciar la búsqueda<br>+ 2% + IVA al completar la compra<br><small>(los 499€ se descuentan del total)</small></span>
+          </div>
+          <a href="#contact" class="btn-primary btn-full" data-i18n="ps_cta">Contratar Personal Shopper →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── ZONES ─────────── -->
+<section class="section" id="zones">
+  <div class="section-inner">
+    <div class="reveal" style="max-width: 600px;">
+      <div class="section-tag" data-i18n="zones_tag">Zonas</div>
+      <h2 class="section-title" data-i18n="zones_title">El mercado que conozco al detalle</h2>
+      <div class="divider"></div>
+      <p class="section-sub" data-i18n="zones_sub">Cada zona tiene su propio carácter, precio y oportunidad. Yo te guío para elegir la que encaja con tu presupuesto y estilo de vida.</p>
+    </div>
+
+    <div class="zones-grid">
+      <div class="zone-card reveal delay-1">
+        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=700&q=85" alt="Villa de lujo Marbella">
+        <div class="zone-type-badge">Villa</div>
+        <div class="zone-overlay">
+          <div class="zone-name">Marbella / Puerto Banús</div>
+          <div class="zone-price">€4.000 – €15.000+/m²</div>
+        </div>
+      </div>
+      <div class="zone-card reveal delay-2">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=700&q=85" alt="Apartamento moderno Estepona">
+        <div class="zone-type-badge">Apartamento</div>
+        <div class="zone-overlay">
+          <div class="zone-name">Estepona / Nueva Andalucía</div>
+          <div class="zone-price">€2.500 – €6.000/m²</div>
+        </div>
+      </div>
+      <div class="zone-card reveal delay-3">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=85" alt="Apartamento con vistas Mijas">
+        <div class="zone-type-badge">Apartamento</div>
+        <div class="zone-overlay">
+          <div class="zone-name">Mijas / La Cala</div>
+          <div class="zone-price">€2.000 – €4.500/m²</div>
+        </div>
+      </div>
+      <div class="zone-card reveal delay-4">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=85" alt="Casa moderna Málaga">
+        <div class="zone-type-badge">Villa</div>
+        <div class="zone-overlay">
+          <div class="zone-name">Málaga Capital</div>
+          <div class="zone-price">€2.200 – €4.500/m²</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── HOW IT WORKS ─────────── -->
+<section class="section how-bg" id="process">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center; margin-bottom: 3rem;">
+      <div class="section-tag" style="color: var(--gold);" data-i18n="how_tag">Proceso</div>
+      <h2 class="section-title" style="color: var(--white);" data-i18n="how_title">¿Cómo funciona el Personal Shopper?</h2>
+      <div class="divider" style="margin: 1rem auto;"></div>
+    </div>
+    <div class="how-grid">
+      <div class="how-step reveal delay-1">
+        <div class="step-num">1</div>
+        <div class="step-title" data-i18n="step1_title">Primera consulta</div>
+        <div class="step-desc" data-i18n="step1_desc">Hablamos de tu presupuesto, zona preferida, tipo de propiedad y plazos. Sin compromiso.</div>
+      </div>
+      <div class="how-step reveal delay-2">
+        <div class="step-num">2</div>
+        <div class="step-title" data-i18n="step2_title">Búsqueda activa</div>
+        <div class="step-desc" data-i18n="step2_desc">Accedo a propiedades en venta en toda la Costa del Sol, incluyendo off-market, y te presento las mejores opciones.</div>
+      </div>
+      <div class="how-step reveal delay-3">
+        <div class="step-num">3</div>
+        <div class="step-title" data-i18n="step3_title">Visitas y análisis</div>
+        <div class="step-desc" data-i18n="step3_desc">Te acompaño en cada visita o las hago yo si estás a distancia, con reportes detallados en vídeo y fotos.</div>
+      </div>
+      <div class="how-step reveal delay-4">
+        <div class="step-num">4</div>
+        <div class="step-title" data-i18n="step4_title">Negociación</div>
+        <div class="step-desc" data-i18n="step4_desc">Negocio el precio y las condiciones para obtener el mejor trato posible. Tu dinero, mi expertise.</div>
+      </div>
+      <div class="how-step reveal delay-1" style="transition-delay: 0.5s">
+        <div class="step-num">5</div>
+        <div class="step-title" data-i18n="step5_title">Cierre y notaría</div>
+        <div class="step-desc" data-i18n="step5_desc">Coordino abogados, notaría y todos los trámites. Tú firmas con total seguridad.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── TESTIMONIALS ─────────── -->
+<section class="section testimonials-bg" id="testimonials">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center; margin-bottom: 3rem;">
+      <div class="section-tag" data-i18n="test_tag">Testimonios</div>
+      <h2 class="section-title" data-i18n="test_title">Lo que dicen mis clientes</h2>
+      <div class="divider" style="margin: 1rem auto;"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal delay-1">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text" data-i18n="t1_text">"Felipe nos hizo el proceso de compra increíblemente fácil. Encontramos nuestro apartamento en Marbella en sólo 6 semanas. Su inglés perfecto y conocimiento del mercado fueron clave."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">🇬🇧</div>
+          <div>
+            <div class="author-name">James & Sarah H.</div>
+            <div class="author-meta" data-i18n="t1_meta">Marbella · Personal Shopper</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-2">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text" data-i18n="t2_text">"La guía de 39€ nos ahorró miles de euros en impuestos que desconocíamos. Explica perfectamente qué esperar en cada etapa. ¡Vale su peso en oro!"</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">🇫🇷</div>
+          <div>
+            <div class="author-name">Marie & Pierre D.</div>
+            <div class="author-meta" data-i18n="t2_meta">Estepona · Guía de compra</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal delay-3">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text" data-i18n="t3_text">"Grazie mille Felipe! Trovare una villa a Mijas sembrava impossibile da Milano, ma Felipe ha gestito tutto a distanza con aggiornamenti video quotidiani. Perfetto."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">🇮🇹</div>
+          <div>
+            <div class="author-name">Marco & Sofia R.</div>
+            <div class="author-meta" data-i18n="t3_meta">Mijas · Personal Shopper</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── FAQ ─────────── -->
+<section class="section" id="faq">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-tag" data-i18n="faq_tag">FAQ</div>
+      <h2 class="section-title" data-i18n="faq_title">Preguntas frecuentes</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="faq-list" id="faqList">
+      <!-- items generated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── CONTACT ─────────── -->
+<section class="section contact-bg" id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <div class="section-tag" style="color: var(--gold);" data-i18n="contact_tag">Contacto</div>
+        <h2 class="section-title" data-i18n="contact_title">Hablemos de tu próxima propiedad</h2>
+        <div class="divider"></div>
+        <p class="section-sub" data-i18n="contact_sub">¿Tienes dudas? ¿Quieres comprar la guía? ¿Listo para arrancar la búsqueda? Escríbeme o llámame. Respondo en 4 idiomas.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <div class="contact-item-label" data-i18n="ci_whatsapp">WhatsApp / Teléfono</div>
+              <div class="contact-item-value"><a href="https://wa.me/34651059366">+34 651 059 366</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-item-label" data-i18n="ci_email">Email</div>
+              <div class="contact-item-value"><a href="mailto:felipeparisvazquez@gmail.com">felipeparisvazquez@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-item-label" data-i18n="ci_location">Ubicación</div>
+              <div class="contact-item-value">La Cala de Mijas, Costa del Sol</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🏢</div>
+            <div>
+              <div class="contact-item-label" data-i18n="ci_company">Agencia</div>
+              <div class="contact-item-value">Black Onyx by Keller Williams</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form reveal-right">
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label" data-i18n="f_name">Nombre</label>
+              <input class="form-input" type="text" data-i18n-placeholder="f_name_ph" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="f_email">Email</label>
+              <input class="form-input" type="email" data-i18n-placeholder="f_email_ph" placeholder="tu@email.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="f_phone">Teléfono / WhatsApp</label>
+              <input class="form-input" type="tel" data-i18n-placeholder="f_phone_ph" placeholder="+34 ...">
+            </div>
+            <div class="form-group">
+              <label class="form-label" data-i18n="f_interest">Me interesa</label>
+              <select class="form-select" id="formInterest">
+                <option value="guide" data-i18n="fi_guide">La Guía (39€)</option>
+                <option value="shopper" data-i18n="fi_shopper">Personal Shopper (499€+)</option>
+                <option value="info" data-i18n="fi_info">Más información</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label class="form-label" data-i18n="f_message">Mensaje</label>
+              <textarea class="form-textarea" data-i18n-placeholder="f_msg_ph" placeholder="Cuéntame qué buscas..."></textarea>
+            </div>
+            <div class="form-group full form-submit">
+              <button type="submit" class="btn-primary btn-full" data-i18n="f_send">Enviar mensaje →</button>
+            </div>
+          </div>
+        </form>
+        <a href="https://wa.me/34651059366" class="whatsapp-btn" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-i18n="whatsapp_btn">Escribir por WhatsApp (más rápido)</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────── FOOTER ─────────── -->
 <footer>
-  <div class="footer-logo">Felipe Paris — Costa del Sol Real Estate</div>
-  <div class="footer-copy">© 2025 Felipe Paris · Black Onyx by Keller Williams · La Cala de Mijas</div>
-  <div class="footer-links">
-    <a href="mailto:felipeparisvazquez@gmail.com">felipeparisvazquez@gmail.com</a>
-    <a href="https://wa.me/34651059366">+34 651 059 366</a>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <span>Felipe Paris</span>
+      <span>Costa del Sol · Real Estate</span>
+    </div>
+    <div class="footer-legal" data-i18n="footer_legal">© 2025 Felipe Paris Vázquez · Black Onyx by Keller Williams · La Cala de Mijas</div>
+    <div class="footer-links">
+      <a href="mailto:felipeparisvazquez@gmail.com" data-i18n="footer_contact">Contacto</a>
+      <a href="https://wa.me/34651059366" data-i18n="footer_wa">WhatsApp</a>
+    </div>
   </div>
 </footer>
+
+<!-- Back to top -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <script>
+// ─── TRANSLATIONS ───
 const i18n = {
-  en: {
-    nav_about:"About",nav_services:"Services",nav_guide:"Guide",nav_zones:"Zones",nav_blog:"Resources",nav_contact:"Contact",nav_cta:"Get the Guide",
-    hero_eyebrow:"Costa del Sol Specialist",
-    hero_title:"Buy Property<br>on the <em>Costa del Sol</em><br>with Confidence",
-    hero_subtitle:"Expert guidance from Málaga to Marbella. 3+ years on the ground, fluent in 4 languages — so you never get lost in translation.",
-    hero_btn1:"📘 Get the €49 Guide",hero_btn2:"Hire a Property Shopper",hero_speak:"I speak",
-    stat_years:"Years on coast",stat_langs:"Languages",stat_guide:"Complete guide",
-    about_eyebrow:"About me",about_title:"Your local expert —<br><em>speaking your language</em>",
-    about_p1:"I'm Felipe Paris, a real estate specialist based on the Costa del Sol with over 3 years of hands-on experience across the Málaga–Marbella corridor. I've helped dozens of foreign buyers navigate the Spanish property market — without the stress and confusion.",
-    about_p2:"What makes me different? I speak English, Spanish, French, and Italian natively — guiding you through every step in your language, with zero misunderstandings.",
-    about_p3:"I work with Black Onyx by Keller Williams, one of the largest real estate networks in the world, with offices right here on the Costa del Sol.",
-    services_eyebrow:"What I offer",services_title:"Two ways I can<br><em>help you buy</em>",
-    s1_title:"Investment Guide",s1_desc:"The complete insider's guide to buying property on the Costa del Sol. Zones, prices, legal process, real taxes and negotiation tactics — in 4 languages.",s1_dl:"instant download",
-    sf1:"Best zones & price per m² analysis",sf2:"Step-by-step legal buying process",sf3:"Real taxes & fees breakdown",sf4:"Holiday rental yield by zone",sf5:"Price negotiation tactics",sf6:"Available in EN / ES / FR / IT",
-    s2_title:"Personal Property Shopper",s2_desc:"I become your exclusive buyer's agent — from search and viewings to document review and notary signing. I handle everything.",s2_price_note:"entry · then 2.5% + VAT at signing",
-    ps1:"Initial consultation included",ps2:"Full property search & viewings",ps3:"Investment & rental yield analysis",ps4:"Document & legal review",ps5:"Price negotiation on your behalf",ps6:"Full support until notary signing",
-    badge_premium:"Premium",btn_access:"Get Instant Access →",btn_whatsapp:"Start with WhatsApp →",
-    guide_eyebrow:"The guide",guide_title:"<em>How to Buy Property</em><br>on the Costa del Sol",
-    guide_cover_title:"How to Buy Property on the Costa del Sol",guide_cover_sub:"6 Chapters · PDF · 4 Languages",
-    ch1:"Best zones & price per m² — Málaga to Marbella",ch2:"Step-by-step legal buying process in Spain",ch3:"Real taxes & fees with exact numbers (2025)",ch4:"Mistakes foreigners make — and how to avoid them",ch5:"Holiday rental yield analysis by zone",ch6:"How to negotiate the best price",
-    available_in:"Available in",launch_price:"Launch price — limited time",
-    g1:"Instant PDF download after purchase",g2:"Available in 4 languages in one file",g3:"Real numbers, real zones, real process",g4:"Written by someone 3+ years on the ground",g5:"One-time payment, yours forever",
-    btn_guide_cta:"📘 Get Instant Access — €49",guide_upsell:"Want more? Book a private consultation — guide included.",btn_shopper_wa:"💬 Ask about Property Shopper",
-    zones_eyebrow:"Zones & prices",zones_title:"Where to buy on<br><em>the Costa del Sol</em>",
-    z1_desc:"The up-and-coming urban investment. Strong short-term rental yields, growing international profile, direct airport access.",z1_best:"Best for: <strong>city apartments, rental income</strong>",
-    z2_desc:"The classic luxury destination. Villas, penthouses, world-class amenities. Strong UK, French and Arab buyer demand.",z2_best:"Best for: <strong>prestige assets, capital growth</strong>",
-    z3_desc:"Best value on the coast. High holiday rental occupancy, direct beach access, well-connected transport links.",z3_best:"Best for: <strong>entry-level investment, first property</strong>",
-    z4_desc:"The golf coast sweet spot. Newer developments, quieter lifestyle, strong French and Belgian buyer community.",z4_best:"Best for: <strong>golf properties, retirement, long-term rentals</strong>",
-    testi_eyebrow:"Client feedback",testi_title:"What clients<br><em>say about me</em>",
-    t1:"\"Felipe explained the entire buying process in French from start to finish. We bought our apartment in Marbella in 4 months — completely stress-free.\"",
-    t2:"\"The €49 guide was the best investment before buying. It saved us from a very expensive mistake on the tax side.\"",
-    t3:"\"Ho trovato finalmente un agente che capisce cosa voglio. Felipe ha trovato la nostra villa a Estepona in meno di 2 mesi.\"",
-    blog_eyebrow:"Free resources",blog_title:"Start here —<br><em>practical guides</em>",
-    blog_cat1:"🏛️ Legal",blog_h1:"The NIE Number: What It Is, Why You Need It, and How to Get It",blog_p1:"No NIE, no purchase. Here's exactly what to do, how long it takes, and how to avoid costly delays.",
-    blog_cat2:"💶 Taxes",blog_h2:"How Much Tax Do You Really Pay When Buying in Spain? (2025)",blog_p2:"ITP, IVA, notary, registry — the full breakdown with real numbers so there are no surprises.",
-    blog_cat3:"📈 Investment",blog_h3:"Holiday Rental Yields on the Costa del Sol: Which Zones Perform Best?",blog_p3:"I analysed occupancy rates and nightly rates across all main zones. Here's what the numbers show.",
-    read_more:"Read more →",
-    contact_eyebrow:"Get in touch",contact_title:"Ready to start your<br><em>Costa del Sol journey?</em>",
-    contact_h3:"I respond within 24 hours —<br>usually much faster.",contact_p:"Whether you have a quick question or want to book a full consultation, reach out via WhatsApp for the fastest response.",
-    ch_wa:"WhatsApp (fastest)",form_title:"Send me a message",
-    form_name:"Your name",form_email:"Email",form_interest:"I'm interested in",form_select:"Select an option...",form_opt1:"The €49 Investment Guide",form_opt2:"Personal Property Shopper",form_opt3:"General Question",
-    form_msg:"Message",form_submit:"Send Message →",form_note:"✓ I respond within 24 hours · ✓ No spam, ever",
-    form_sent:"Message sent!",form_sent2:"I'll be in touch within 24 hours."
-  },
   es: {
-    nav_about:"Sobre mí",nav_services:"Servicios",nav_guide:"Guía",nav_zones:"Zonas",nav_blog:"Recursos",nav_contact:"Contacto",nav_cta:"Obtener Guía",
-    hero_eyebrow:"Especialista Costa del Sol",
-    hero_title:"Compra tu propiedad<br>en la <em>Costa del Sol</em><br>con confianza",
-    hero_subtitle:"Asesoramiento experto de Málaga a Marbella. Más de 3 años sobre el terreno, fluido en 4 idiomas — para que nunca te pierdas en la traducción.",
-    hero_btn1:"📘 Obtener la Guía €49",hero_btn2:"Contratar un Buscador",hero_speak:"Hablo",
-    stat_years:"Años en la costa",stat_langs:"Idiomas",stat_guide:"Guía completa",
-    about_eyebrow:"Sobre mí",about_title:"Tu experto local —<br><em>hablando tu idioma</em>",
-    about_p1:"Soy Felipe Paris, especialista inmobiliario en la Costa del Sol con más de 3 años de experiencia en el corredor Málaga–Marbella. He ayudado a decenas de compradores extranjeros a navegar el mercado español sin estrés.",
-    about_p2:"¿Qué me diferencia? Hablo inglés, español, francés e italiano de forma nativa — guiándote en cada paso en tu idioma, sin malentendidos.",
-    about_p3:"Trabajo con Black Onyx by Keller Williams, una de las mayores redes inmobiliarias del mundo, con oficinas aquí en la Costa del Sol.",
-    services_eyebrow:"Lo que ofrezco",services_title:"Dos formas en que puedo<br><em>ayudarte a comprar</em>",
-    s1_title:"Guía de Inversión",s1_desc:"La guía completa para comprar propiedad en la Costa del Sol. Zonas, precios, proceso legal, impuestos reales y tácticas de negociación — en 4 idiomas.",s1_dl:"descarga instantánea",
-    sf1:"Mejores zonas y precio por m²",sf2:"Proceso legal paso a paso",sf3:"Impuestos y gastos reales",sf4:"Rentabilidad alquiler vacacional por zona",sf5:"Tácticas de negociación",sf6:"Disponible EN / ES / FR / IT",
-    s2_title:"Personal Property Shopper",s2_desc:"Me convierto en tu agente comprador exclusivo — desde la búsqueda y visitas hasta la revisión de documentos y la notaría. Me encargo de todo.",s2_price_note:"entrada · luego 2.5% + IVA al firmar",
-    ps1:"Consulta inicial incluida",ps2:"Búsqueda completa y visitas",ps3:"Análisis de inversión y rentabilidad",ps4:"Revisión documentos y aspectos legales",ps5:"Negociación precio en tu nombre",ps6:"Apoyo completo hasta la notaría",
-    badge_premium:"Premium",btn_access:"Acceso Instantáneo →",btn_whatsapp:"Empezar por WhatsApp →",
-    guide_eyebrow:"La guía",guide_title:"<em>Cómo Comprar una Propiedad</em><br>en la Costa del Sol",
-    guide_cover_title:"Cómo Comprar una Propiedad en la Costa del Sol",guide_cover_sub:"6 Capítulos · PDF · 4 Idiomas",
-    ch1:"Mejores zonas y precio por m² — Málaga a Marbella",ch2:"Proceso legal en España paso a paso",ch3:"Impuestos y gastos con cifras exactas (2025)",ch4:"Errores de extranjeros — cómo evitarlos",ch5:"Análisis rentabilidad alquiler vacacional",ch6:"Cómo negociar el mejor precio",
-    available_in:"Disponible en",launch_price:"Precio de lanzamiento — tiempo limitado",
-    g1:"Descarga PDF instantánea tras la compra",g2:"Disponible en 4 idiomas en un archivo",g3:"Cifras reales, zonas reales, proceso real",g4:"Escrito por alguien con 3+ años sobre el terreno",g5:"Pago único, tuyo para siempre",
-    btn_guide_cta:"📘 Acceso Instantáneo — €49",guide_upsell:"¿Quieres más? Reserva una consulta privada — guía incluida.",btn_shopper_wa:"💬 Pregunta por el Property Shopper",
-    zones_eyebrow:"Zonas y precios",zones_title:"Dónde comprar en<br><em>la Costa del Sol</em>",
-    z1_desc:"La inversión urbana emergente. Fuerte rentabilidad alquiler corto plazo, perfil internacional creciente, acceso directo al aeropuerto.",z1_best:"Ideal para: <strong>apartamentos urbanos, ingresos por alquiler</strong>",
-    z2_desc:"El destino de lujo por excelencia. Villas, áticos, servicios de primer nivel. Gran demanda de compradores UK, franceses y árabes.",z2_best:"Ideal para: <strong>activos de prestigio, revalorización</strong>",
-    z3_desc:"El mejor precio de la costa. Alta ocupación vacacional, acceso directo a la playa, excelentes conexiones de transporte.",z3_best:"Ideal para: <strong>inversión de entrada, primera propiedad</strong>",
-    z4_desc:"El punto dulce de la costa del golf. Urbanizaciones nuevas, estilo de vida tranquilo, fuerte comunidad francesa y belga.",z4_best:"Ideal para: <strong>propiedades de golf, jubilación, alquiler largo plazo</strong>",
-    testi_eyebrow:"Opiniones de clientes",testi_title:"Lo que dicen<br><em>mis clientes</em>",
-    t1:"\"Felipe nos explicó todo el proceso en francés de principio a fin. Compramos nuestro apartamento en Marbella en 4 meses — sin ningún estrés.\"",
-    t2:"\"La guía de €49 fue la mejor inversión antes de comprar. Nos salvó de un error muy costoso en el tema fiscal.\"",
-    t3:"\"Ho trovato finalmente un agente che capisce cosa voglio. Felipe ha trovato la nostra villa a Estepona in meno di 2 mesi.\"",
-    blog_eyebrow:"Recursos gratuitos",blog_title:"Empieza aquí —<br><em>guías prácticas</em>",
-    blog_cat1:"🏛️ Legal",blog_h1:"El NIE: Qué es, por qué lo necesitas y cómo obtenerlo",blog_p1:"Sin NIE, no hay compra. Exactamente qué hacer, cuánto lleva y cómo evitar retrasos en la notaría.",
-    blog_cat2:"💶 Impuestos",blog_h2:"¿Cuánto impuesto pagas realmente al comprar en España? (2025)",blog_p2:"ITP, IVA, notaría, registro — el desglose completo con cifras reales sin sorpresas.",
-    blog_cat3:"📈 Inversión",blog_h3:"Rentabilidad alquiler vacacional: ¿qué zonas rinden más?",blog_p3:"He analizado tasas de ocupación y tarifas medias en las principales zonas. Aquí están los resultados.",
-    read_more:"Leer más →",
-    contact_eyebrow:"Contacto",contact_title:"¿Listo para empezar tu<br><em>aventura en la Costa del Sol?</em>",
-    contact_h3:"Respondo en 24 horas —<br>normalmente mucho antes.",contact_p:"Tanto si tienes una pregunta rápida como si quieres reservar una consulta, escríbeme por WhatsApp.",
-    ch_wa:"WhatsApp (más rápido)",form_title:"Envíame un mensaje",
-    form_name:"Tu nombre",form_email:"Email",form_interest:"Me interesa",form_select:"Selecciona una opción...",form_opt1:"La Guía de Inversión €49",form_opt2:"Personal Property Shopper",form_opt3:"Pregunta general",
-    form_msg:"Mensaje",form_submit:"Enviar mensaje →",form_note:"✓ Respondo en 24h · ✓ Sin spam",
-    form_sent:"¡Mensaje enviado!",form_sent2:"Me pondré en contacto en 24 horas."
+    nav_subtitle: "Costa del Sol · Real Estate",
+    nav_about: "Sobre mí",
+    nav_services: "Servicios",
+    nav_zones: "Zonas",
+    nav_process: "Proceso",
+    nav_contact: "Contacto",
+    hero_badge: "Agente Inmobiliario · Costa del Sol",
+    hero_title: 'Tu experto para comprar en la <em>Costa del Sol</em>',
+    hero_sub: "Hablo tu idioma. Conozco el mercado. Te acompaño desde la primera búsqueda hasta las llaves en tu mano.",
+    hero_cta1: "Ver servicios",
+    hero_cta2: "Hablar con Felipe",
+    hero_scroll: "Descubre más",
+    stat1: "Idiomas", stat2: "Años en el mercado", stat3: "Dedicación al cliente", stat4: "Black Onyx · Keller Williams",
+    about_tag: "Sobre mí",
+    about_title: "Felipe Paris,<br>tu agente de confianza",
+    about_sub: "Con más de 3 años en el mercado de la Costa del Sol y 4 idiomas a mi disposición, me especializo en ayudar a compradores internacionales a encontrar su propiedad ideal. Trabajo con Black Onyx by Keller Williams desde La Cala de Mijas.",
+    feat1_title: "Mercado local", feat1_sub: "Marbella, Estepona, Mijas y toda la Costa",
+    feat2_title: "Asesoría legal", feat2_sub: "NIE, notaría, impuestos y contratos",
+    feat3_title: "Negociación", feat3_sub: "Defiendo tu precio y tus intereses",
+    feat4_title: "Internacional", feat4_sub: "Expat? Inversor? Jubilado? Te entiendo",
+    services_tag: "Servicios",
+    services_title: "Elige tu camino hacia la propiedad",
+    services_sub: "Tanto si quieres hacerlo tú mismo con la guía correcta como si prefieres delegar todo en mí, tengo la solución perfecta.",
+    guide_badge: "Guía Digital",
+    guide_title: "La Guía Definitiva para Comprar en la Costa del Sol",
+    guide_desc: "Todo lo que necesitas saber antes de dar el primer paso. Zonas, impuestos, trámites legales, errores comunes y estrategias de negociación.",
+    g1:"Guía de zonas y precios por m²", g2:"Proceso de compra paso a paso", g3:"Impuestos y costes ocultos", g4:"Cómo obtener el NIE", g5:"Errores que cometen los compradores", g6:"Consejos de negociación",
+    guide_price_note: "Descarga inmediata\nPDF completo",
+    guide_cta: "Comprar la guía →",
+    ps_badge: "Servicio Premium",
+    ps_title: "Personal Shopper Inmobiliario",
+    ps_desc: "Me convierto en tu agente exclusivo de compra. Yo busco, filtro, negocio y te acompaño en todo el proceso. Tú solo tienes que decir sí a la casa perfecta.",
+    p1:"Búsqueda personalizada y filtrado", p2:"Visitas guiadas y análisis de cada propiedad", p3:"Negociación del precio a tu favor", p4:"Gestión del NIE y apertura de cuenta", p5:"Coordinación con abogados y notaría", p6:"Apoyo postventa incluido",
+    ps_price_note: "Para iniciar la búsqueda\n+ 2% + IVA al completar la compra\n(los 499€ se descuentan del total)",
+    ps_cta: "Contratar Personal Shopper →",
+    zones_tag: "Zonas", zones_title: "El mercado que conozco al detalle",
+    zones_sub: "Cada zona tiene su propio carácter, precio y oportunidad. Yo te guío para elegir la que encaja con tu presupuesto y estilo de vida.",
+    how_tag: "Proceso",
+    how_title: "¿Cómo funciona el Personal Shopper?",
+    step1_title:"Primera consulta", step1_desc:"Hablamos de tu presupuesto, zona preferida, tipo de propiedad y plazos. Sin compromiso.",
+    step2_title:"Búsqueda activa", step2_desc:"Accedo a propiedades en toda la Costa del Sol, incluyendo off-market, y te presento las mejores opciones.",
+    step3_title:"Visitas y análisis", step3_desc:"Te acompaño en cada visita o las hago yo si estás a distancia, con reportes detallados en vídeo.",
+    step4_title:"Negociación", step4_desc:"Negocio el precio y las condiciones para obtener el mejor trato posible. Tu dinero, mi expertise.",
+    step5_title:"Cierre y notaría", step5_desc:"Coordino abogados, notaría y todos los trámites. Tú firmas con total seguridad.",
+    test_tag:"Testimonios", test_title:"Lo que dicen mis clientes",
+    t1_text:'"Felipe nos hizo el proceso de compra increíblemente fácil. Encontramos nuestro apartamento en Marbella en 6 semanas. Su inglés perfecto y conocimiento del mercado fueron clave."',
+    t1_meta:"Marbella · Personal Shopper",
+    t2_text:'"La guía de 39€ nos ahorró miles de euros en impuestos que desconocíamos. Explica perfectamente qué esperar en cada etapa. ¡Vale su peso en oro!"',
+    t2_meta:"Estepona · Guía de compra",
+    t3_text:'"Grazie mille Felipe! Trovare una villa a Mijas sembrava impossibile da Milano, ma Felipe ha gestito tutto a distanza con aggiornamenti video quotidiani. Perfetto."',
+    t3_meta:"Mijas · Personal Shopper",
+    faq_tag:"FAQ", faq_title:"Preguntas frecuentes",
+    faqs: [
+      {q:"¿Qué incluye exactamente el Personal Shopper?", a:"Incluye la búsqueda completa de propiedades que se adapten a tus criterios, visitas presenciales o por vídeo, negociación del precio, coordinación con abogado y notaría, y soporte postventa. Los 499€ iniciales cubren el arranque del proceso y se descuentan del 2% + IVA final."},
+      {q:"¿Cómo funciona el precio del Personal Shopper?", a:"Pagas 499€ al contratar el servicio para iniciar la búsqueda. Al completar la compra, la comisión total es del 2% del precio de compra + IVA, de la que se descuentan los 499€ ya abonados. Es decir, los 499€ son un anticipo, no un coste adicional."},
+      {q:"¿La guía está disponible en otros idiomas?", a:"Actualmente la guía está disponible en español e inglés. Si necesitas otra versión, contáctame directamente."},
+      {q:"¿Trabajas solo con Marbella o también otras zonas?", a:"Trabajo en toda la Costa del Sol: Marbella, Puerto Banús, Estepona, Mijas, La Cala, Benalmádena, Torremolinos y Málaga capital."},
+      {q:"¿Puedes ayudarme aunque esté en otro país?", a:"Sí, es habitual. Muchos de mis clientes compran desde el extranjero. Hago visitas en vídeo, informes detallados y coordino todo para que solo vengas a firmar si así lo prefieres."},
+      {q:"¿Cuánto se paga de impuestos al comprar una propiedad en España?", a:"Escríbeme y te lo explico en detalle según tu caso →"},
+      {q:"¿Cuánto cuesta la notaría y los gastos de escritura?", a:"Escríbeme y te lo explico en detalle según tu caso →"},
+      {q:"¿Cuánto tiempo tarda todo el proceso de compra de principio a fin?", a:"Escríbeme y te lo explico en detalle según tu caso →"},
+      {q:"¿Necesito cuenta bancaria en España para poder comprar?", a:"Escríbeme y te lo explico en detalle según tu caso →"},
+    ],
+    contact_tag:"Contacto", contact_title:"Hablemos de tu próxima propiedad",
+    contact_sub:"¿Tienes dudas? ¿Quieres comprar la guía? ¿Listo para arrancar la búsqueda? Escríbeme o llámame. Respondo en 4 idiomas.",
+    ci_whatsapp:"WhatsApp / Teléfono", ci_email:"Email", ci_location:"Ubicación", ci_company:"Agencia",
+    f_name:"Nombre", f_name_ph:"Tu nombre",
+    f_email:"Email", f_email_ph:"tu@email.com",
+    f_phone:"Teléfono / WhatsApp", f_phone_ph:"+34 ...",
+    f_interest:"Me interesa",
+    fi_guide:"La Guía (39€)", fi_shopper:"Personal Shopper (499€+)", fi_info:"Más información",
+    f_message:"Mensaje", f_msg_ph:"Cuéntame qué buscas...",
+    f_send:"Enviar mensaje →",
+    whatsapp_btn:"Escribir por WhatsApp (más rápido)",
+    footer_legal:"© 2025 Felipe Paris Vázquez · Black Onyx by Keller Williams · La Cala de Mijas",
+    footer_contact:"Contacto", footer_wa:"WhatsApp",
+  },
+  en: {
+    nav_subtitle: "Costa del Sol · Real Estate",
+    nav_about: "About",
+    nav_services: "Services",
+    nav_zones: "Areas",
+    nav_process: "Process",
+    nav_contact: "Contact",
+    hero_badge: "Real Estate Agent · Costa del Sol",
+    hero_title: 'Your expert for buying on the <em>Costa del Sol</em>',
+    hero_sub: "I speak your language. I know the market. I guide you from the first search to the keys in your hand.",
+    hero_cta1: "View services",
+    hero_cta2: "Talk to Felipe",
+    hero_scroll: "Discover more",
+    stat1: "Languages", stat2: "Years in the market", stat3: "Client dedication", stat4: "Black Onyx · Keller Williams",
+    about_tag: "About me",
+    about_title: "Felipe Paris,<br>your trusted agent",
+    about_sub: "With over 3 years on the Costa del Sol market and 4 languages at my disposal, I specialize in helping international buyers find their ideal property. I work with Black Onyx by Keller Williams from La Cala de Mijas.",
+    feat1_title: "Local market", feat1_sub: "Marbella, Estepona, Mijas and the entire coast",
+    feat2_title: "Legal advice", feat2_sub: "NIE, notary, taxes and contracts",
+    feat3_title: "Negotiation", feat3_sub: "I fight for your price and interests",
+    feat4_title: "International", feat4_sub: "Expat? Investor? Retiree? I understand you",
+    services_tag: "Services",
+    services_title: "Choose your path to property ownership",
+    services_sub: "Whether you want to do it yourself with the right guide or prefer to delegate everything to me, I have the perfect solution.",
+    guide_badge: "Digital Guide",
+    guide_title: "The Definitive Guide to Buying on the Costa del Sol",
+    guide_desc: "Everything you need to know before taking the first step. Areas, taxes, legal processes, common mistakes, and negotiation strategies.",
+    g1:"Area guide and prices per m²", g2:"Step-by-step buying process", g3:"Taxes and hidden costs", g4:"How to get your NIE", g5:"Mistakes buyers make", g6:"Negotiation tips",
+    guide_price_note: "Instant download\nFull PDF",
+    guide_cta: "Buy the guide →",
+    ps_badge: "Premium Service",
+    ps_title: "Personal Property Shopper",
+    ps_desc: "I become your exclusive buying agent. I search, filter, negotiate and guide you through the entire process. You just say yes to the perfect home.",
+    p1:"Personalized search and filtering", p2:"Guided visits and analysis of each property", p3:"Price negotiation in your favour", p4:"NIE management and account opening", p5:"Coordination with lawyers and notary", p6:"After-sales support included",
+    ps_price_note: "To start the search\n+ 2% + VAT on completion\n(€499 deducted from the total)",
+    ps_cta: "Hire Personal Shopper →",
+    zones_tag: "Areas", zones_title: "The market I know in detail",
+    zones_sub: "Each area has its own character, price, and opportunity. I guide you to choose the one that fits your budget and lifestyle.",
+    how_tag: "Process",
+    how_title: "How does the Personal Shopper work?",
+    step1_title:"First consultation", step1_desc:"We talk about your budget, preferred area, type of property and timeline. No commitment.",
+    step2_title:"Active search", step2_desc:"I access properties throughout the Costa del Sol, including off-market, and present you with the best options.",
+    step3_title:"Visits and analysis", step3_desc:"I accompany you on each visit or do them myself if you're abroad, with detailed video and photo reports.",
+    step4_title:"Negotiation", step4_desc:"I negotiate price and terms to get the best deal possible. Your money, my expertise.",
+    step5_title:"Closing and notary", step5_desc:"I coordinate lawyers, notary and all paperwork. You sign with complete peace of mind.",
+    test_tag:"Testimonials", test_title:"What my clients say",
+    t1_text:'"Felipe made the buying process incredibly easy. We found our Marbella apartment in just 6 weeks. His perfect English and market knowledge were key."',
+    t1_meta:"Marbella · Personal Shopper",
+    t2_text:'"The €39 guide saved us thousands in taxes we didn\'t know about. It perfectly explains what to expect at each stage. Worth its weight in gold!"',
+    t2_meta:"Estepona · Buying guide",
+    t3_text:'"Grazie mille Felipe! Finding a villa in Mijas seemed impossible from Milan, but Felipe managed everything remotely with daily video updates. Perfect."',
+    t3_meta:"Mijas · Personal Shopper",
+    faq_tag:"FAQ", faq_title:"Frequently asked questions",
+    faqs: [
+      {q:"What does the Personal Shopper include exactly?", a:"It includes a complete property search matching your criteria, in-person or video visits, price negotiation, coordination with lawyer and notary, and after-sales support. The initial €499 covers the start of the process and is deducted from the final 2% + VAT."},
+      {q:"How does the Personal Shopper pricing work?", a:"You pay €499 when engaging the service to start the search. On completion, the total fee is 2% of the purchase price + VAT, from which the €499 already paid is deducted. The €499 is an advance payment, not an additional cost."},
+      {q:"Is the guide available in other languages?", a:"The guide is currently available in Spanish and English. If you need another version, contact me directly."},
+      {q:"Do you only work in Marbella or other areas too?", a:"I work across the Costa del Sol: Marbella, Puerto Banús, Estepona, Mijas, La Cala, Benalmádena, Torremolinos and Málaga capital."},
+      {q:"Can you help me even if I'm in another country?", a:"Absolutely — it's very common. Many of my clients buy from abroad. I do video visits, detailed reports and coordinate everything so you only need to come and sign if you prefer."},
+      {q:"How much tax do you pay when buying a property in Spain?", a:"Contact me and I'll explain in detail for your specific case →"},
+      {q:"How much does the notary and title deed costs amount to?", a:"Contact me and I'll explain in detail for your specific case →"},
+      {q:"How long does the entire buying process take from start to finish?", a:"Contact me and I'll explain in detail for your specific case →"},
+      {q:"Do I need a Spanish bank account to buy a property?", a:"Contact me and I'll explain in detail for your specific case →"},
+    ],
+    contact_tag:"Contact", contact_title:"Let's talk about your next property",
+    contact_sub:"Questions? Want to buy the guide? Ready to start the search? Write or call me. I reply in 4 languages.",
+    ci_whatsapp:"WhatsApp / Phone", ci_email:"Email", ci_location:"Location", ci_company:"Agency",
+    f_name:"Name", f_name_ph:"Your name",
+    f_email:"Email", f_email_ph:"you@email.com",
+    f_phone:"Phone / WhatsApp", f_phone_ph:"+34 ...",
+    f_interest:"I'm interested in",
+    fi_guide:"The Guide (€39)", fi_shopper:"Personal Shopper (€499+)", fi_info:"More information",
+    f_message:"Message", f_msg_ph:"Tell me what you're looking for...",
+    f_send:"Send message →",
+    whatsapp_btn:"Message on WhatsApp (fastest)",
+    footer_legal:"© 2025 Felipe Paris Vázquez · Black Onyx by Keller Williams · La Cala de Mijas",
+    footer_contact:"Contact", footer_wa:"WhatsApp",
   },
   fr: {
-    nav_about:"À propos",nav_services:"Services",nav_guide:"Guide",nav_zones:"Zones",nav_blog:"Ressources",nav_contact:"Contact",nav_cta:"Obtenir le Guide",
-    hero_eyebrow:"Spécialiste Costa del Sol",
-    hero_title:"Acheter votre bien sur la<br><em>Costa del Sol</em><br>en toute confiance",
-    hero_subtitle:"Accompagnement expert de Málaga à Marbella. Plus de 3 ans sur le terrain, fluent en 4 langues — pour ne jamais se perdre dans la traduction.",
-    hero_btn1:"📘 Obtenir le Guide €49",hero_btn2:"Engager un Chasseur Immobilier",hero_speak:"Je parle",
-    stat_years:"Ans sur la côte",stat_langs:"Langues",stat_guide:"Guide complet",
-    about_eyebrow:"À propos de moi",about_title:"Votre expert local —<br><em>qui parle votre langue</em>",
-    about_p1:"Je suis Felipe Paris, spécialiste immobilier sur la Costa del Sol avec plus de 3 ans d'expérience sur le corridor Málaga–Marbella. J'ai aidé des dizaines d'acheteurs étrangers sans stress ni confusion.",
-    about_p2:"Ce qui me différencie ? Je parle anglais, espagnol, français et italien nativement — vous accompagnant à chaque étape dans votre langue, sans aucun malentendu.",
-    about_p3:"Je travaille avec Black Onyx by Keller Williams, l'un des plus grands réseaux immobiliers au monde, avec des bureaux ici sur la Costa del Sol.",
-    services_eyebrow:"Ce que je propose",services_title:"Deux façons dont je peux<br><em>vous aider à acheter</em>",
-    s1_title:"Guide d'Investissement",s1_desc:"Le guide complet pour acheter un bien sur la Costa del Sol. Zones, prix, processus légal, vrais impôts et tactiques de négociation — en 4 langues.",s1_dl:"téléchargement instantané",
-    sf1:"Meilleures zones et prix au m²",sf2:"Processus d'achat légal étape par étape",sf3:"Impôts et frais réels détaillés",sf4:"Rendement locatif vacances par zone",sf5:"Tactiques de négociation",sf6:"Disponible EN / ES / FR / IT",
-    s2_title:"Chasseur Immobilier Personnel",s2_desc:"Je deviens votre agent acheteur exclusif — de la recherche et des visites à la révision des documents et la signature chez le notaire.",s2_price_note:"entrée · puis 2,5% + TVA à la signature",
-    ps1:"Consultation initiale incluse",ps2:"Recherche complète et visites",ps3:"Analyse d'investissement et rendement",ps4:"Révision des documents et aspects légaux",ps5:"Négociation du prix en votre nom",ps6:"Accompagnement complet jusqu'au notaire",
-    badge_premium:"Premium",btn_access:"Accès Instantané →",btn_whatsapp:"Commencer sur WhatsApp →",
-    guide_eyebrow:"Le guide",guide_title:"<em>Comment Acheter un Bien</em><br>sur la Costa del Sol",
-    guide_cover_title:"Comment Acheter un Bien sur la Costa del Sol",guide_cover_sub:"6 Chapitres · PDF · 4 Langues",
-    ch1:"Meilleures zones et prix au m² — Málaga à Marbella",ch2:"Processus d'achat légal en Espagne",ch3:"Impôts et frais avec chiffres exacts (2025)",ch4:"Erreurs des étrangers — comment les éviter",ch5:"Analyse du rendement locatif par zone",ch6:"Comment négocier le meilleur prix",
-    available_in:"Disponible en",launch_price:"Prix de lancement — durée limitée",
-    g1:"Téléchargement PDF instantané après achat",g2:"Disponible en 4 langues dans un fichier",g3:"Chiffres réels, zones réelles, processus réel",g4:"Rédigé par quelqu'un 3+ ans sur le terrain",g5:"Paiement unique, à vous pour toujours",
-    btn_guide_cta:"📘 Accès Instantané — €49",guide_upsell:"Vous voulez plus ? Consultez-moi en privé — guide inclus.",btn_shopper_wa:"💬 Renseignez-vous sur le Chasseur",
-    zones_eyebrow:"Zones et prix",zones_title:"Où acheter sur<br><em>la Costa del Sol</em>",
-    z1_desc:"L'investissement urbain émergent. Fort rendement locatif court terme, profil international croissant, accès direct à l'aéroport.",z1_best:"Idéal pour : <strong>appartements urbains, revenus locatifs</strong>",
-    z2_desc:"La destination luxe par excellence. Villas, penthouses, équipements de classe mondiale. Forte demande britannique, française et arabe.",z2_best:"Idéal pour : <strong>actifs de prestige, plus-value</strong>",
-    z3_desc:"Le meilleur rapport qualité-prix de la côte. Forte occupation vacances, accès à la plage, excellentes liaisons transport.",z3_best:"Idéal pour : <strong>investissement d'entrée, première propriété</strong>",
-    z4_desc:"Le point idéal de la côte du golf. Nouvelles résidences, style de vie tranquille, forte communauté française et belge.",z4_best:"Idéal pour : <strong>propriétés de golf, retraite, location longue durée</strong>",
-    testi_eyebrow:"Avis clients",testi_title:"Ce que disent<br><em>mes clients</em>",
-    t1:"\"Felipe nous a expliqué tout le processus en français de A à Z. Nous avons acheté à Marbella en 4 mois — sans aucun stress.\"",
-    t2:"\"Le guide à €49 était le meilleur investissement avant d'acheter. Il nous a évité une erreur très coûteuse côté fiscal.\"",
-    t3:"\"Ho trovato finalmente un agente che capisce cosa voglio. Felipe ha trovato la nostra villa a Estepona in meno di 2 mesi.\"",
-    blog_eyebrow:"Ressources gratuites",blog_title:"Commencez ici —<br><em>guides pratiques</em>",
-    blog_cat1:"🏛️ Légal",blog_h1:"Le NIE : ce que c'est, pourquoi vous en avez besoin et comment l'obtenir",blog_p1:"Sans NIE, pas d'achat. Exactement quoi faire, combien de temps et comment éviter les retards.",
-    blog_cat2:"💶 Impôts",blog_h2:"Combien d'impôts payez-vous vraiment en achetant en Espagne ? (2025)",blog_p2:"ITP, TVA, notaire, registre — bilan complet avec chiffres réels sans mauvaises surprises.",
-    blog_cat3:"📈 Investissement",blog_h3:"Rendements locatifs vacances : quelles zones performent le mieux ?",blog_p3:"J'ai analysé les taux d'occupation et tarifs moyens dans les principales zones.",
-    read_more:"Lire la suite →",
-    contact_eyebrow:"Me contacter",contact_title:"Prêt à commencer votre<br><em>aventure sur la Costa del Sol ?</em>",
-    contact_h3:"Je réponds sous 24 heures —<br>généralement bien plus vite.",contact_p:"Que vous ayez une question rapide ou souhaitiez une consultation, contactez-moi sur WhatsApp.",
-    ch_wa:"WhatsApp (le plus rapide)",form_title:"Envoyez-moi un message",
-    form_name:"Votre nom",form_email:"Email",form_interest:"Je suis intéressé par",form_select:"Sélectionnez...",form_opt1:"Le Guide d'Investissement €49",form_opt2:"Chasseur Immobilier Personnel",form_opt3:"Question générale",
-    form_msg:"Message",form_submit:"Envoyer →",form_note:"✓ Réponse sous 24h · ✓ Aucun spam",
-    form_sent:"Message envoyé !",form_sent2:"Je vous contacterai dans les 24 heures."
+    nav_subtitle: "Costa del Sol · Immobilier",
+    nav_about: "À propos",
+    nav_services: "Services",
+    nav_zones: "Zones",
+    nav_process: "Processus",
+    nav_contact: "Contact",
+    hero_badge: "Agent Immobilier · Costa del Sol",
+    hero_title: "Votre expert pour acheter sur la <em>Costa del Sol</em>",
+    hero_sub: "Je parle votre langue. Je connais le marché. Je vous accompagne de la première recherche jusqu'aux clés en main.",
+    hero_cta1: "Voir les services",
+    hero_cta2: "Parler à Felipe",
+    hero_scroll: "Découvrir plus",
+    stat1: "Langues", stat2: "Ans sur le marché", stat3: "Dédication client", stat4: "Black Onyx · Keller Williams",
+    about_tag: "À propos",
+    about_title: "Felipe Paris,<br>votre agent de confiance",
+    about_sub: "Avec plus de 3 ans sur le marché de la Costa del Sol et 4 langues à ma disposition, je me spécialise dans l'aide aux acheteurs internationaux pour trouver leur propriété idéale. Je travaille avec Black Onyx by Keller Williams depuis La Cala de Mijas.",
+    feat1_title: "Marché local", feat1_sub: "Marbella, Estepona, Mijas et toute la Costa",
+    feat2_title: "Conseils juridiques", feat2_sub: "NIE, notaire, impôts et contrats",
+    feat3_title: "Négociation", feat3_sub: "Je défends votre prix et vos intérêts",
+    feat4_title: "International", feat4_sub: "Expatrié? Investisseur? Retraité? Je vous comprends",
+    services_tag: "Services",
+    services_title: "Choisissez votre voie vers la propriété",
+    services_sub: "Que vous souhaitiez le faire vous-même avec le bon guide ou préférez tout déléguer, j'ai la solution parfaite.",
+    guide_badge: "Guide Numérique",
+    guide_title: "Le Guide Définitif pour Acheter sur la Costa del Sol",
+    guide_desc: "Tout ce que vous devez savoir avant de faire le premier pas. Zones, impôts, démarches légales, erreurs courantes et stratégies de négociation.",
+    g1:"Guide des zones et prix au m²", g2:"Processus d'achat étape par étape", g3:"Impôts et coûts cachés", g4:"Comment obtenir le NIE", g5:"Erreurs des acheteurs", g6:"Conseils de négociation",
+    guide_price_note: "Téléchargement immédiat\nPDF complet",
+    guide_cta: "Acheter le guide →",
+    ps_badge: "Service Premium",
+    ps_title: "Personal Shopper Immobilier",
+    ps_desc: "Je deviens votre agent d'achat exclusif. Je cherche, filtre, négocie et vous accompagne tout au long du processus. Vous n'avez qu'à dire oui à la maison parfaite.",
+    p1:"Recherche personnalisée et filtrage", p2:"Visites guidées et analyse de chaque propriété", p3:"Négociation du prix en votre faveur", p4:"Gestion du NIE et ouverture de compte", p5:"Coordination avec avocats et notaire", p6:"Support après-vente inclus",
+    ps_price_note: "Pour démarrer la recherche\n+ 2% + TVA à la finalisation\n(499€ déduits du total)",
+    ps_cta: "Engager le Personal Shopper →",
+    zones_tag: "Zones", zones_title: "Le marché que je connais en détail",
+    zones_sub: "Chaque zone a son propre caractère, prix et opportunité. Je vous guide pour choisir celle qui correspond à votre budget et style de vie.",
+    how_tag: "Processus",
+    how_title: "Comment fonctionne le Personal Shopper?",
+    step1_title:"Première consultation", step1_desc:"Nous parlons de votre budget, zone préférée, type de bien et délais. Sans engagement.",
+    step2_title:"Recherche active", step2_desc:"J'accède aux propriétés dans toute la Costa del Sol, y compris off-market, et vous présente les meilleures options.",
+    step3_title:"Visites et analyse", step3_desc:"Je vous accompagne lors de chaque visite ou je les effectue moi-même si vous êtes à distance, avec rapports vidéo détaillés.",
+    step4_title:"Négociation", step4_desc:"Je négocie le prix et les conditions pour obtenir la meilleure offre possible. Votre argent, mon expertise.",
+    step5_title:"Clôture et notaire", step5_desc:"Je coordonne avocats, notaire et toutes les formalités. Vous signez en toute sécurité.",
+    test_tag:"Témoignages", test_title:"Ce que disent mes clients",
+    t1_text:'"Felipe a rendu le processus d\'achat incroyablement facile. Nous avons trouvé notre appartement à Marbella en seulement 6 semaines. Son anglais parfait et sa connaissance du marché ont été déterminants."',
+    t1_meta:"Marbella · Personal Shopper",
+    t2_text:'"Le guide à 39€ nous a économisé des milliers d\'euros en impôts que nous ne connaissions pas. Il explique parfaitement ce à quoi s\'attendre à chaque étape. Ça vaut son pesant d\'or !"',
+    t2_meta:"Estepona · Guide d'achat",
+    t3_text:'"Grazie mille Felipe! Trouver une villa à Mijas semblait impossible depuis Milan, mais Felipe a tout géré à distance avec des mises à jour vidéo quotidiennes. Parfait."',
+    t3_meta:"Mijas · Personal Shopper",
+    faq_tag:"FAQ", faq_title:"Questions fréquentes",
+    faqs: [
+      {q:"Que comprend exactement le Personal Shopper?", a:"Il comprend une recherche complète de propriétés correspondant à vos critères, des visites en personne ou par vidéo, la négociation du prix, la coordination avec l'avocat et le notaire, et un support après-vente. Les 499€ initiaux couvrent le démarrage du processus et sont déduits du 2% + TVA final."},
+      {q:"Comment fonctionne le tarif du Personal Shopper?", a:"Vous payez 499€ à la signature pour démarrer la recherche. À la finalisation, les honoraires totaux sont de 2% du prix d'achat + TVA, desquels les 499€ déjà payés sont déduits. Les 499€ sont une avance, pas un coût supplémentaire."},
+      {q:"Le guide est-il disponible en d'autres langues?", a:"Le guide est actuellement disponible en espagnol et en anglais. Si vous avez besoin d'une autre version, contactez-moi directement."},
+      {q:"Travaillez-vous uniquement à Marbella?", a:"Je travaille sur toute la Costa del Sol : Marbella, Puerto Banús, Estepona, Mijas, La Cala, Benalmádena, Torremolinos et Málaga capitale."},
+      {q:"Pouvez-vous m'aider même si je suis dans un autre pays?", a:"Absolument — c'est très courant. Beaucoup de mes clients achètent depuis l'étranger. Je fais des visites vidéo, des rapports détaillés et coordonne tout pour que vous veniez seulement signer si vous préférez."},
+      {q:"Combien d'impôts paie-t-on lors de l'achat d'un bien immobilier en Espagne?", a:"Contactez-moi et je vous explique en détail selon votre situation →"},
+      {q:"Combien coûtent le notaire et les frais d'acte?", a:"Contactez-moi et je vous explique en détail selon votre situation →"},
+      {q:"Combien de temps dure tout le processus d'achat du début à la fin?", a:"Contactez-moi et je vous explique en détail selon votre situation →"},
+      {q:"Faut-il un compte bancaire espagnol pour acheter un bien?", a:"Contactez-moi et je vous explique en détail selon votre situation →"},
+    ],
+    contact_tag:"Contact", contact_title:"Parlons de votre prochaine propriété",
+    contact_sub:"Des questions? Vous voulez acheter le guide? Prêt à lancer la recherche? Écrivez-moi ou appelez-moi. Je réponds en 4 langues.",
+    ci_whatsapp:"WhatsApp / Téléphone", ci_email:"Email", ci_location:"Localisation", ci_company:"Agence",
+    f_name:"Nom", f_name_ph:"Votre nom",
+    f_email:"Email", f_email_ph:"vous@email.com",
+    f_phone:"Téléphone / WhatsApp", f_phone_ph:"+34 ...",
+    f_interest:"Je suis intéressé par",
+    fi_guide:"Le Guide (39€)", fi_shopper:"Personal Shopper (499€+)", fi_info:"Plus d'informations",
+    f_message:"Message", f_msg_ph:"Dites-moi ce que vous cherchez...",
+    f_send:"Envoyer le message →",
+    whatsapp_btn:"Écrire sur WhatsApp (plus rapide)",
+    footer_legal:"© 2025 Felipe Paris Vázquez · Black Onyx by Keller Williams · La Cala de Mijas",
+    footer_contact:"Contact", footer_wa:"WhatsApp",
   },
   it: {
-    nav_about:"Chi sono",nav_services:"Servizi",nav_guide:"Guida",nav_zones:"Zone",nav_blog:"Risorse",nav_contact:"Contatti",nav_cta:"Ottieni la Guida",
-    hero_eyebrow:"Specialista Costa del Sol",
-    hero_title:"Acquista il tuo immobile<br>sulla <em>Costa del Sol</em><br>con fiducia",
-    hero_subtitle:"Assistenza esperta da Málaga a Marbella. Oltre 3 anni sul campo, fluente in 4 lingue — così non ti perdi mai nella traduzione.",
-    hero_btn1:"📘 Ottieni la Guida €49",hero_btn2:"Assumi un Property Shopper",hero_speak:"Parlo",
-    stat_years:"Anni sulla costa",stat_langs:"Lingue",stat_guide:"Guida completa",
-    about_eyebrow:"Chi sono",about_title:"Il tuo esperto locale —<br><em>che parla la tua lingua</em>",
-    about_p1:"Sono Felipe Paris, specialista immobiliare sulla Costa del Sol con oltre 3 anni di esperienza nel corridoio Málaga–Marbella. Ho aiutato decine di acquirenti stranieri senza stress e confusione.",
-    about_p2:"Cosa mi differenzia? Parlo inglese, spagnolo, francese e italiano come madrelingua — guidandoti in ogni fase nella tua lingua, senza malintesi.",
-    about_p3:"Lavoro con Black Onyx by Keller Williams, una delle più grandi reti immobiliari al mondo, con uffici qui sulla Costa del Sol.",
-    services_eyebrow:"Cosa offro",services_title:"Due modi per<br><em>aiutarti ad acquistare</em>",
-    s1_title:"Guida agli Investimenti",s1_desc:"La guida completa per acquistare un immobile sulla Costa del Sol. Zone, prezzi, processo legale, tasse reali e tattiche di negoziazione — in 4 lingue.",s1_dl:"download istantaneo",
-    sf1:"Migliori zone e prezzo per m²",sf2:"Processo di acquisto legale passo per passo",sf3:"Tasse e spese reali dettagliate",sf4:"Rendimento affitti vacanze per zona",sf5:"Tattiche di negoziazione del prezzo",sf6:"Disponibile EN / ES / FR / IT",
-    s2_title:"Property Shopper Personale",s2_desc:"Divento il tuo agente acquirente esclusivo — dalla ricerca e visite alla revisione documenti e firma dal notaio. Mi occupo di tutto.",s2_price_note:"acconto · poi 2,5% + IVA alla firma",
-    ps1:"Consulenza iniziale inclusa",ps2:"Ricerca completa e visite",ps3:"Analisi investimento e rendimento",ps4:"Revisione documenti e aspetti legali",ps5:"Negoziazione del prezzo per conto tuo",ps6:"Supporto completo fino al notaio",
-    badge_premium:"Premium",btn_access:"Accesso Istantaneo →",btn_whatsapp:"Inizia su WhatsApp →",
-    guide_eyebrow:"La guida",guide_title:"<em>Come Acquistare un Immobile</em><br>sulla Costa del Sol",
-    guide_cover_title:"Come Acquistare un Immobile sulla Costa del Sol",guide_cover_sub:"6 Capitoli · PDF · 4 Lingue",
-    ch1:"Migliori zone e prezzo per m² — da Málaga a Marbella",ch2:"Processo di acquisto legale in Spagna",ch3:"Tasse e spese con cifre esatte (2025)",ch4:"Errori degli stranieri — come evitarli",ch5:"Analisi rendimento affitti vacanze per zona",ch6:"Come negoziare il miglior prezzo",
-    available_in:"Disponibile in",launch_price:"Prezzo lancio — tempo limitato",
-    g1:"Download PDF istantaneo dopo l'acquisto",g2:"Disponibile in 4 lingue in un file",g3:"Cifre reali, zone reali, processo reale",g4:"Scritto da chi è sul campo da 3+ anni",g5:"Pagamento unico, tuo per sempre",
-    btn_guide_cta:"📘 Accesso Istantaneo — €49",guide_upsell:"Vuoi di più? Prenota una consulenza privata — guida inclusa.",btn_shopper_wa:"💬 Chiedi del Property Shopper",
-    zones_eyebrow:"Zone e prezzi",zones_title:"Dove comprare<br><em>sulla Costa del Sol</em>",
-    z1_desc:"L'investimento urbano emergente. Forte rendimento affitti brevi, profilo internazionale crescente, accesso diretto all'aeroporto.",z1_best:"Ideale per: <strong>appartamenti urbani, reddito da affitto</strong>",
-    z2_desc:"La destinazione lusso per eccellenza. Ville, attici, servizi di prima classe. Forte domanda da acquirenti britannici, francesi e arabi.",z2_best:"Ideale per: <strong>asset di prestigio, rivalutazione</strong>",
-    z3_desc:"Il miglior rapporto qualità-prezzo della costa. Alta occupazione vacanze, accesso diretto alla spiaggia, ottimi collegamenti.",z3_best:"Ideale per: <strong>investimento d'ingresso, prima proprietà</strong>",
-    z4_desc:"Il punto dolce della costa del golf. Nuovi sviluppi, stile di vita tranquillo, forte comunità francese e belga.",z4_best:"Ideale per: <strong>proprietà golf, pensione, affitti lungo termine</strong>",
-    testi_eyebrow:"Feedback clienti",testi_title:"Cosa dicono<br><em>i miei clienti</em>",
-    t1:"\"Felipe ci ha spiegato l'intero processo in francese dall'inizio alla fine. Abbiamo acquistato a Marbella in 4 mesi — senza nessuno stress.\"",
-    t2:"\"La guida da €49 è stato il miglior investimento prima dell'acquisto. Ci ha salvato da un errore molto costoso sul lato fiscale.\"",
-    t3:"\"Ho trovato finalmente un agente che capisce cosa voglio. Felipe ha trovato la nostra villa a Estepona in meno di 2 mesi.\"",
-    blog_eyebrow:"Risorse gratuite",blog_title:"Inizia qui —<br><em>guide pratiche</em>",
-    blog_cat1:"🏛️ Legale",blog_h1:"Il NIE: cos'è, perché ne hai bisogno e come ottenerlo",blog_p1:"Senza NIE, nessun acquisto. Esattamente cosa fare, quanto tempo ci vuole e come evitare ritardi.",
-    blog_cat2:"💶 Tasse",blog_h2:"Quante tasse paghi davvero acquistando in Spagna? (2025)",blog_p2:"ITP, IVA, notaio, registro — il quadro completo con cifre reali senza sorprese.",
-    blog_cat3:"📈 Investimento",blog_h3:"Rendimenti affitti vacanze: quali zone performano meglio?",blog_p3:"Ho analizzato i tassi di occupazione e le tariffe medie nelle principali zone.",
-    read_more:"Leggi di più →",
-    contact_eyebrow:"Contattami",contact_title:"Pronto a iniziare il tuo<br><em>viaggio sulla Costa del Sol?</em>",
-    contact_h3:"Rispondo entro 24 ore —<br>di solito molto prima.",contact_p:"Che tu abbia una domanda veloce o voglia prenotare una consulenza, scrivimi su WhatsApp.",
-    ch_wa:"WhatsApp (più veloce)",form_title:"Mandami un messaggio",
-    form_name:"Il tuo nome",form_email:"Email",form_interest:"Sono interessato a",form_select:"Seleziona...",form_opt1:"La Guida agli Investimenti €49",form_opt2:"Property Shopper Personale",form_opt3:"Domanda generale",
-    form_msg:"Messaggio",form_submit:"Invia messaggio →",form_note:"✓ Rispondo entro 24h · ✓ Nessuno spam",
-    form_sent:"Messaggio inviato!",form_sent2:"Ti contatterò entro 24 ore."
+    nav_subtitle: "Costa del Sol · Immobiliare",
+    nav_about: "Chi sono",
+    nav_services: "Servizi",
+    nav_zones: "Zone",
+    nav_process: "Processo",
+    nav_contact: "Contatto",
+    hero_badge: "Agente Immobiliare · Costa del Sol",
+    hero_title: "Il tuo esperto per acquistare sulla <em>Costa del Sol</em>",
+    hero_sub: "Parlo la tua lingua. Conosco il mercato. Ti accompagno dalla prima ricerca fino alle chiavi in mano.",
+    hero_cta1: "Vedi i servizi",
+    hero_cta2: "Parla con Felipe",
+    hero_scroll: "Scopri di più",
+    stat1: "Lingue", stat2: "Anni nel mercato", stat3: "Dedizione al cliente", stat4: "Black Onyx · Keller Williams",
+    about_tag: "Chi sono",
+    about_title: "Felipe Paris,<br>il tuo agente di fiducia",
+    about_sub: "Con oltre 3 anni nel mercato della Costa del Sol e 4 lingue a mia disposizione, mi specializzo nell'aiutare gli acquirenti internazionali a trovare la loro proprietà ideale. Lavoro con Black Onyx by Keller Williams da La Cala de Mijas.",
+    feat1_title: "Mercato locale", feat1_sub: "Marbella, Estepona, Mijas e tutta la Costa",
+    feat2_title: "Consulenza legale", feat2_sub: "NIE, notaio, tasse e contratti",
+    feat3_title: "Negoziazione", feat3_sub: "Difendo il tuo prezzo e i tuoi interessi",
+    feat4_title: "Internazionale", feat4_sub: "Expat? Investitore? Pensionato? Ti capisco",
+    services_tag: "Servizi",
+    services_title: "Scegli il tuo percorso verso la proprietà",
+    services_sub: "Che tu voglia farlo da solo con la guida giusta o preferisca delegare tutto a me, ho la soluzione perfetta.",
+    guide_badge: "Guida Digitale",
+    guide_title: "La Guida Definitiva per Acquistare sulla Costa del Sol",
+    guide_desc: "Tutto ciò che devi sapere prima di fare il primo passo. Zone, tasse, procedure legali, errori comuni e strategie di negoziazione.",
+    g1:"Guida alle zone e prezzi al m²", g2:"Processo di acquisto passo dopo passo", g3:"Tasse e costi nascosti", g4:"Come ottenere il NIE", g5:"Errori che fanno gli acquirenti", g6:"Consigli di negoziazione",
+    guide_price_note: "Download immediato\nPDF completo",
+    guide_cta: "Acquista la guida →",
+    ps_badge: "Servizio Premium",
+    ps_title: "Personal Shopper Immobiliare",
+    ps_desc: "Divento il tuo agente d'acquisto esclusivo. Cerco, filtro, negozio e ti accompagno in tutto il processo. Tu devi solo dire sì alla casa perfetta.",
+    p1:"Ricerca personalizzata e filtraggio", p2:"Visite guidate e analisi di ogni proprietà", p3:"Negoziazione del prezzo a tuo favore", p4:"Gestione del NIE e apertura conto", p5:"Coordinamento con avvocati e notaio", p6:"Supporto post-vendita incluso",
+    ps_price_note: "Per avviare la ricerca\n+ 2% + IVA al completamento\n(i 499€ vengono detratti dal totale)",
+    ps_cta: "Assumi il Personal Shopper →",
+    zones_tag: "Zone", zones_title: "Il mercato che conosco nel dettaglio",
+    zones_sub: "Ogni zona ha il proprio carattere, prezzo e opportunità. Ti guido per scegliere quella che si adatta al tuo budget e stile di vita.",
+    how_tag: "Processo",
+    how_title: "Come funziona il Personal Shopper?",
+    step1_title:"Prima consultazione", step1_desc:"Parliamo del tuo budget, zona preferita, tipo di proprietà e tempi. Senza impegno.",
+    step2_title:"Ricerca attiva", step2_desc:"Accedo alle proprietà in tutta la Costa del Sol, incluse quelle off-market, e ti presento le migliori opzioni.",
+    step3_title:"Visite e analisi", step3_desc:"Ti accompagno ad ogni visita o le effettuo io se sei all'estero, con report dettagliati in video e foto.",
+    step4_title:"Negoziazione", step4_desc:"Negozio il prezzo e le condizioni per ottenere il miglior affare possibile. Il tuo denaro, la mia esperienza.",
+    step5_title:"Chiusura e notaio", step5_desc:"Coordino avvocati, notaio e tutte le pratiche. Firmi con totale sicurezza.",
+    test_tag:"Testimonianze", test_title:"Cosa dicono i miei clienti",
+    t1_text:'"Felipe ha reso il processo di acquisto incredibilmente semplice. Abbiamo trovato il nostro appartamento a Marbella in soli 6 settimane. Il suo inglese perfetto e la conoscenza del mercato sono stati fondamentali."',
+    t1_meta:"Marbella · Personal Shopper",
+    t2_text:'"La guida da 39€ ci ha fatto risparmiare migliaia di euro in tasse che non conoscevamo. Spiega perfettamente cosa aspettarsi ad ogni fase. Vale il suo peso in oro!"',
+    t2_meta:"Estepona · Guida di acquisto",
+    t3_text:'"Grazie mille Felipe! Trovare una villa a Mijas sembrava impossibile da Milano, ma Felipe ha gestito tutto a distanza con aggiornamenti video quotidiani. Perfetto."',
+    t3_meta:"Mijas · Personal Shopper",
+    faq_tag:"FAQ", faq_title:"Domande frequenti",
+    faqs: [
+      {q:"Cosa include esattamente il Personal Shopper?", a:"Include una ricerca completa di proprietà che soddisfano i tuoi criteri, visite di persona o in video, negoziazione del prezzo, coordinamento con avvocato e notaio, e supporto post-vendita. I 499€ iniziali coprono l'avvio del processo e vengono detratti dal 2% + IVA finale."},
+      {q:"Come funziona il prezzo del Personal Shopper?", a:"Paghi 499€ quando sottoscrivi il servizio per avviare la ricerca. Al completamento, la commissione totale è del 2% del prezzo di acquisto + IVA, dal quale vengono detratti i 499€ già pagati. I 499€ sono un anticipo, non un costo aggiuntivo."},
+      {q:"La guida è disponibile in altre lingue?", a:"La guida è attualmente disponibile in spagnolo e inglese. Se hai bisogno di un'altra versione, contattami direttamente."},
+      {q:"Lavori solo a Marbella o anche in altre zone?", a:"Lavoro in tutta la Costa del Sol: Marbella, Puerto Banús, Estepona, Mijas, La Cala, Benalmádena, Torremolinos e Málaga capitale."},
+      {q:"Puoi aiutarmi anche se sono in un altro paese?", a:"Assolutamente sì — è molto comune. Molti dei miei clienti acquistano dall'estero. Effettuo visite video, report dettagliati e coordino tutto in modo che tu debba venire solo a firmare se preferisci."},
+      {q:"Quanto si pagano di tasse acquistando un immobile in Spagna?", a:"Scrivimi e te lo spiego nel dettaglio per il tuo caso specifico →"},
+      {q:"Quanto costano il notaio e le spese di atto?", a:"Scrivimi e te lo spiego nel dettaglio per il tuo caso specifico →"},
+      {q:"Quanto tempo richiede l'intero processo di acquisto dall'inizio alla fine?", a:"Scrivimi e te lo spiego nel dettaglio per il tuo caso specifico →"},
+      {q:"È necessario avere un conto bancario spagnolo per acquistare?", a:"Scrivimi e te lo spiego nel dettaglio per il tuo caso specifico →"},
+    ],
+    contact_tag:"Contatto", contact_title:"Parliamo della tua prossima proprietà",
+    contact_sub:"Hai domande? Vuoi acquistare la guida? Pronto a iniziare la ricerca? Scrivimi o chiamami. Rispondo in 4 lingue.",
+    ci_whatsapp:"WhatsApp / Telefono", ci_email:"Email", ci_location:"Posizione", ci_company:"Agenzia",
+    f_name:"Nome", f_name_ph:"Il tuo nome",
+    f_email:"Email", f_email_ph:"tu@email.com",
+    f_phone:"Telefono / WhatsApp", f_phone_ph:"+34 ...",
+    f_interest:"Sono interessato a",
+    fi_guide:"La Guida (39€)", fi_shopper:"Personal Shopper (499€+)", fi_info:"Maggiori informazioni",
+    f_message:"Messaggio", f_msg_ph:"Dimmi cosa stai cercando...",
+    f_send:"Invia messaggio →",
+    whatsapp_btn:"Scrivi su WhatsApp (più veloce)",
+    footer_legal:"© 2025 Felipe Paris Vázquez · Black Onyx by Keller Williams · La Cala de Mijas",
+    footer_contact:"Contatto", footer_wa:"WhatsApp",
   }
 };
-let currentLang = 'en';
+
+let currentLang = 'es';
+
 function setLang(lang) {
   currentLang = lang;
   const t = i18n[lang];
-  document.documentElement.lang = lang;
+
+  // Update all [data-i18n] elements
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) el.innerHTML = t[key];
+    if (t[key] !== undefined) {
+      el.innerHTML = t[key];
+    }
   });
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+
+  // Update placeholders
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key]) el.placeholder = t[key];
   });
-}
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-document.addEventListener('click', e => {
-  const menu = document.getElementById('mobileMenu');
-  const ham = document.querySelector('.hamburger');
-  if (menu.classList.contains('open') && !menu.contains(e.target) && !ham.contains(e.target)) {
-    menu.classList.remove('open');
+
+  // Update select options
+  const sel = document.getElementById('formInterest');
+  if (sel) {
+    const opts = sel.options;
+    if (opts[0]) opts[0].text = t.fi_guide;
+    if (opts[1]) opts[1].text = t.fi_shopper;
+    if (opts[2]) opts[2].text = t.fi_info;
   }
-});
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-const form = document.getElementById('contactForm');
-if (form) {
-  form.addEventListener('submit', async e => {
-    e.preventDefault();
-    const btn = form.querySelector('.form-submit');
-    btn.textContent = '...'; btn.disabled = true;
-    try {
-      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
-      if (res.ok) {
-        form.style.display = 'none';
-        document.getElementById('formSuccess').style.display = 'block';
-      } else { btn.textContent = i18n[currentLang].form_submit; btn.disabled = false; }
-    } catch { btn.textContent = i18n[currentLang].form_submit; btn.disabled = false; }
+
+  // Update html lang
+  document.documentElement.lang = lang;
+
+  // Re-render FAQ
+  renderFAQ();
+
+  // Update active button
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
   });
 }
+
+// ─── FAQ RENDER ───
+function renderFAQ() {
+  const t = i18n[currentLang];
+  const container = document.getElementById('faqList');
+  container.innerHTML = '';
+  t.faqs.forEach((item, i) => {
+    const div = document.createElement('div');
+    div.className = 'faq-item reveal';
+    div.innerHTML = `
+      <div class="faq-question" onclick="toggleFaq(this.parentElement)">
+        <span class="faq-q-text">${item.q}</span>
+        <span class="faq-icon">+</span>
+      </div>
+      <div class="faq-answer">${item.a}</div>
+    `;
+    container.appendChild(div);
+  });
+  // Trigger reveal for new items
+  setTimeout(() => {
+    container.querySelectorAll('.reveal').forEach(el => {
+      if (isInViewport(el)) el.classList.add('visible');
+    });
+  }, 50);
+}
+
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ─── HERO PARALLAX + 3D MOUSE ───
+const heroEl    = document.querySelector('.hero');
+const heroContent = document.querySelector('.hero-content');
+let mouseX = 0, mouseY = 0;
+
+function updateHero() {
+  const sy = window.scrollY;
+  const tiltX = mouseY * 6;
+  const tiltY = mouseX * -6;
+  // Background: parallax scroll + 3D tilt
+  heroBg.style.transform = `translateY(${sy * 0.38}px) perspective(900px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+  // Content: subtle counter-scroll for depth
+  heroContent.style.transform = `translateY(${sy * 0.12}px)`;
+}
+
+heroEl.addEventListener('mousemove', (e) => {
+  const r = heroEl.getBoundingClientRect();
+  mouseX = (e.clientX - r.left) / r.width - 0.5;
+  mouseY = (e.clientY - r.top)  / r.height - 0.5;
+  updateHero();
+});
+heroEl.addEventListener('mouseleave', () => {
+  mouseX = 0; mouseY = 0;
+  updateHero();
+});
+
+// ─── SCROLL BEHAVIOR ───
+window.addEventListener('scroll', () => {
+  const scrolled = window.scrollY > 60;
+  document.getElementById('navbar').classList.toggle('scrolled', scrolled);
+  document.getElementById('backTop').classList.toggle('show', window.scrollY > 400);
+  updateHero();
+}, { passive: true });
+
+// ─── INTERSECTION OBSERVER ───
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return rect.top < window.innerHeight - 60;
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+  observer.observe(el);
+});
+
+// ─── MOBILE MENU ───
+function toggleMenu() {
+  const menu = document.getElementById('mobileMenu');
+  const btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+
+// Close on scroll
+window.addEventListener('scroll', () => {
+  if (document.getElementById('mobileMenu').classList.contains('open')) closeMenu();
+}, { passive: true });
+
+// ─── HERO BG LOAD ───
+const heroBg = document.getElementById('heroBg');
+const bgImg = new Image();
+bgImg.onload = () => { heroBg.classList.add('loaded'); updateHero(); };
+bgImg.src = 'https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1800&q=80';
+
+// ─── FORM SUBMIT → WhatsApp ───
+function submitForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const inputs = form.querySelectorAll('input, select, textarea');
+  const name     = inputs[0].value.trim();
+  const email    = inputs[1].value.trim();
+  const phone    = inputs[2].value.trim();
+  const interest = document.getElementById('formInterest').options[document.getElementById('formInterest').selectedIndex].text;
+  const message  = inputs[4].value.trim();
+
+  const labels = {
+    es: { name:'Nombre', email:'Email', phone:'Teléfono', interest:'Interés', msg:'Mensaje', intro:'Hola Felipe, te escribo desde tu web:' },
+    en: { name:'Name',   email:'Email', phone:'Phone',    interest:'Interest', msg:'Message', intro:'Hi Felipe, I\'m contacting you from your website:' },
+    fr: { name:'Nom',    email:'Email', phone:'Téléphone',interest:'Intérêt',  msg:'Message', intro:'Bonjour Felipe, je vous contacte depuis votre site:' },
+    it: { name:'Nome',   email:'Email', phone:'Telefono', interest:'Interesse',msg:'Messaggio',intro:'Ciao Felipe, ti scrivo dal tuo sito:' },
+  };
+  const l = labels[currentLang];
+
+  const text = `${l.intro}\n\n*${l.name}:* ${name}\n*${l.email}:* ${email}\n*${l.phone}:* ${phone || '—'}\n*${l.interest}:* ${interest}\n*${l.msg}:* ${message || '—'}`;
+
+  window.open('https://wa.me/34651059366?text=' + encodeURIComponent(text), '_blank');
+
+  const btn = form.querySelector('[type="submit"]');
+  const successText = {es:'✓ ¡Abriendo WhatsApp!', en:'✓ Opening WhatsApp!', fr:'✓ Ouverture WhatsApp!', it:'✓ Apertura WhatsApp!'};
+  btn.textContent = successText[currentLang];
+  btn.style.background = '#16a34a';
+  btn.style.borderColor = '#16a34a';
+  setTimeout(() => {
+    btn.innerHTML = i18n[currentLang].f_send;
+    btn.style.background = '';
+    btn.style.borderColor = '';
+    form.reset();
+  }, 3000);
+}
+
+// ─── INIT ───
+renderFAQ();
+setLang('es');
 </script>
 </body>
 </html>
